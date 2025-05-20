@@ -59,7 +59,7 @@ The `ootb_catalog.json` file contains the unique identified `id` as well as the 
 
 ### Approach
 
-For details on the approach to generate flows and the evaluation results on the tests suite refer to Sections 3 Section 4 of the [paper](./flow_bench_arxiv.pdf), respectively.
+For details on the approach to generate flows and the evaluation results on the tests suite refer to Sections 3 and 4 of the [paper](./flow_bench_arxiv.pdf), respectively.
 
 ### Videos
 
