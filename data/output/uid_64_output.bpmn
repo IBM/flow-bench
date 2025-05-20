@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" exporter="bpmn-js (https://demo.bpmn.io)" exporterVersion="18.3.1">
+  <process id="Process_1" isExecutable="false">
+    <startEvent id="startEvent_1" name="Start" />
+    <userTask id="userTask_2" name="&#39;Create new lambda function called calculator&#39;" />
+    <sequenceFlow id="flow_startEvent_1_userTask_2" sourceRef="startEvent_1" targetRef="userTask_2" />
+    <task id="task_3" name="AWS_Lambda_function__2_0_0__INVOKEFUNCTION_function">
+      <outgoing>Flow_0ewoyox</outgoing>
+    </task>
+    <sequenceFlow id="flow_userTask_2_task_3" sourceRef="userTask_2" targetRef="task_3" />
+    <endEvent id="endEvent_4" name="End">
+      <incoming>Flow_0ewoyox</incoming>
+    </endEvent>
+    <sequenceFlow id="Flow_0ewoyox" sourceRef="task_3" targetRef="endEvent_4" />
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_1">
+      <bpmndi:BPMNShape id="BPMNShape_startEvent_1" bpmnElement="startEvent_1">
+        <dc:Bounds x="186" y="100" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="192" y="136" width="24" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_endEvent_4" bpmnElement="endEvent_4">
+        <dc:Bounds x="902" y="100" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="910" y="136" width="20" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_task_3" bpmnElement="task_3">
+        <dc:Bounds x="660" y="78" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_userTask_2" bpmnElement="userTask_2">
+        <dc:Bounds x="450" y="90" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="BPMNEdge_flow_startEvent_1_userTask_2" bpmnElement="flow_startEvent_1_userTask_2">
+        <di:waypoint x="215" y="104" />
+        <di:waypoint x="336" y="104" />
+        <di:waypoint x="336" y="169" />
+        <di:waypoint x="456" y="169" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_flow_userTask_2_task_3" bpmnElement="flow_userTask_2_task_3">
+        <di:waypoint x="550" y="130" />
+        <di:waypoint x="605" y="130" />
+        <di:waypoint x="605" y="118" />
+        <di:waypoint x="660" y="118" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0ewoyox_di" bpmnElement="Flow_0ewoyox">
+        <di:waypoint x="760" y="118" />
+        <di:waypoint x="902" y="118" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>

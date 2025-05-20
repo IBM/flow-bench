@@ -1,0 +1,2410 @@
+ibm_internal: true
+actions:
+  - $ref: "ootb_catalog.json"
+skillset_sources: []
+policy_rules: []
+tests:
+  - _metadata:
+      tags:
+        - "1"
+        - linear
+      uid: 1
+    input:
+      utterance: |-
+        Create a new Jira issue and then create a github repository.
+      prior_sequence: ""
+      prior_context: []
+    expected_output:
+      sequence:
+        - |-
+          issue = Jira_Issue__2_0_0__create_Issue()
+          repository = GitHub_Repository__3_0_0__create_Repository()
+      bpmn: 
+        - $ref: "output/uid_1_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "2"
+        - conditional
+      uid: 2
+    input:
+      utterance: |-
+        Retrieve the latest ServiceNow incident. If the incident has "high" impact, create an issue in Jira and send a slack message. Else create a github issue.
+      prior_sequence: ""
+      prior_context: []
+    expected_output:
+      sequence:
+        - |-
+          incident = ServiceNow_incident__4_0_0__retrievewithwhere_incident()
+          if incident.impact == "high":
+            issue = Jira_Issue__2_0_0__create_Issue()
+            message = Slack_message__3_0_0__create_message()
+          else:
+            issue = GitHub_Issue__3_0_0__create_Issue()
+      bpmn: 
+        - $ref: "output/uid_2_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "3"
+        - conditional
+      uid: 3
+    input:
+      utterance: |-
+        Create a new contact in salesforce and create a box folder for this contact. If the folder name is none, then send an email using outlook.
+      prior_sequence: ""
+      prior_context: []
+    expected_output:
+      sequence:
+        - |-
+          contact = Salesforce_Contact__5_0_0__create_Contact()
+          folder = Box_Folder__3_0_0__create_Folder()
+          if folder.name == None:
+            email = Microsoft_Exchange_Messages__2_0_0__SENDOUTLOOK_Messages()
+      bpmn: 
+        - $ref: "output/uid_3_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "4"
+        - conditional
+      uid: 4
+    input:
+      utterance: |-
+        Retrieve all the issues from the Jira board. For every issue, if its priority is urgent, create an asana task and send an email using gmail to everyone. If its a low priority issue, then just send a slack message.
+      prior_sequence: ""
+      prior_context: []
+    expected_output:
+      sequence:
+        - |-
+          issues = Jira_Issue__2_0_0__retrievewithwhere_Issue()
+          for issue in issues:
+            if issue.priority == "urgent":
+              task = Asana_Tasks__2_0_0__create_Tasks()
+              email = Gmail_mail__2_0_0__create_mail()
+            elif issue.priority == "low":
+              message = Slack_message__3_0_0__create_message()
+      bpmn: 
+        - $ref: "output/uid_4_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "5"
+        - conditional
+      uid: 5
+    input:
+      utterance: |-
+        Create a new box folder. For every retrieved salesforce account, create a new file in the folder.
+      prior_sequence: ""
+      prior_context: []
+    expected_output:
+      sequence:
+        - |-
+          folder = Box_Folder__3_0_0__create_Folder()
+          accounts = Salesforce_Account__5_0_0__retrievewithwhere_Account()
+          for account in accounts:
+            file = Box_File__3_0_0__create_File()
+      bpmn: 
+        - $ref: "output/uid_5_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "6"
+        - conditional
+        - user_task
+      uid: 6
+    input:
+      utterance: |-
+        Create a new box folder, then send a slack message and finally check on team status.
+      prior_sequence: ""
+      prior_context: []
+    expected_output:
+      sequence:
+        - |-
+          folder = Box_Folder__3_0_0__create_Folder()
+          message = Slack_message__3_0_0__create_message()
+          task = user_task("check team status")
+      bpmn: 
+        - $ref: "output/uid_6_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "7"
+        - conditional
+        - user_task
+      uid: 7
+    input:
+      utterance: |-
+        Get all the slack channels in my organization. Within each channel retrieve all the users and validate their credentials.
+      prior_sequence: ""
+      prior_context: []
+    expected_output:
+      sequence:
+        - |-
+          channels = Slack_channel__3_0_0__retrievewithwhere_channel()
+          for channel in channels:
+            users = Slack_user__4_0_0__retrievewithwhere_user()
+            task = user_task("validate credentials")
+      bpmn: 
+        - $ref: "output/uid_7_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "8"
+        - linear
+        - user_task
+      uid: 8
+    input:
+      utterance: |-
+        Create two new marketo leads. Then send a slack message and connect with stakeholders.
+      prior_sequence: ""
+      prior_context: []
+    expected_output:
+      sequence:
+        - |-
+          lead1 = Marketo_leads__3_0_0__create_leads()
+          lead2 = Marketo_leads__3_0_0__create_leads()
+          message = Slack_message__3_0_0__create_message()
+          task = user_task("connect with stakeholders")
+      bpmn: 
+        - $ref: "output/uid_8_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "9"
+        - conditional
+      uid: 9
+    input:
+      utterance: |-
+        Use Github. Get all the repositories in my org. For every repo, get all the issues and for each issue give me all the comments that were written.
+        If the comment author is "abc", then send a slack message.
+      prior_sequence: ""
+      prior_context: []
+    expected_output:
+      sequence:
+        - |-
+          repositories = GitHub_Repository__3_0_0__retrievewithwhere_Repository()
+          for repository in repositories:
+            issues = GitHub_Issue__3_0_0__retrievewithwhere_Issue()
+            for issue in issues:
+              comments = GitHub_Comment__3_0_0__retrievewithwhere_Comment()
+              for comment in comments:
+                if comment.author == "abc":
+                  message = Slack_message__3_0_0__create_message()
+      bpmn: 
+        - $ref: "output/uid_9_output.bpmn"
+  
+  - _metadata:
+      tags:
+        - "10"
+        - conditional
+      uid: 10
+    input:
+      utterance: |-
+        Create a new S3 bucket. For every file in my box folder, create a new object. If the object size is larger than 100, delete it.
+      prior_sequence: ""
+      prior_context: []
+    expected_output:
+      sequence:
+        - |-
+          bucket = Amazon_S3_bucket__2_0_0__create_bucket()
+          files = Box_File__3_0_0__retrievewithwhere_File()
+          for file in files:
+            object = Amazon_S3_object__2_0_0__create_object()
+            if object.size > 100:
+              object = Amazon_S3_object__2_0_0__deletewithwhere_object()
+      bpmn: 
+        - $ref: "output/uid_10_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "11"
+        - conditional_update
+        - conditional_update_replace
+      uid: 11
+    input:
+      utterance: |-
+        Send an email using outlook instead of a slack message
+      prior_sequence:
+        - |-
+          incident = ServiceNow_incident__4_0_0__retrievewithwhere_incident()
+          if incident.priority == "high":
+            issue = Jira_Issue__2_0_0__create_Issue()
+            message = Slack_message__3_0_0__create_message()
+          else:
+            issue = GitHub_Issue__3_0_0__create_Issue()
+      prior_context: []
+      bpmn: 
+        - $ref: "context/uid_11_context.bpmn"
+    expected_output:
+      sequence:
+        - |-
+          incident = ServiceNow_incident__4_0_0__retrievewithwhere_incident()
+          if incident.priority == "high":
+            issue = Jira_Issue__2_0_0__create_Issue()
+            email = Microsoft_Exchange_Messages__2_0_0__SENDOUTLOOK_Messages()
+          else:
+            issue = GitHub_Issue__3_0_0__create_Issue()
+      bpmn: 
+        - $ref: "output/uid_11_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "12"
+        - conditional_update
+        - conditional_update_add
+      uid: 12
+    input:
+      utterance: |-
+        If the folder name is not none, then send a slack message. 
+      prior_sequence:
+        - |-
+          contact = Salesforce_Contact__5_0_0__create_Contact()
+          folder = Box_Folder__3_0_0__create_Folder()
+          if folder.name == None:
+            email = Microsoft_Exchange_Messages__2_0_0__SENDOUTLOOK_Messages()
+      prior_context: []
+      bpmn: 
+        - $ref: "context/uid_12_context.bpmn"
+    expected_output:
+      sequence:
+        - |-
+          contact = Salesforce_Contact__5_0_0__create_Contact()
+          folder = Box_Folder__3_0_0__create_Folder()
+          if folder.name == None:
+            email = Microsoft_Exchange_Messages__2_0_0__SENDOUTLOOK_Messages()
+          else:
+            message = Slack_message__3_0_0__create_message()
+      bpmn: 
+        - $ref: "output/uid_12_output.bpmn"
+    
+  - _metadata:
+      tags:
+        - "13"
+        - conditional_update
+        - conditional_update_add
+      uid: 13 
+    input:
+      utterance: |-
+        Add attachment to Asana task after creation of every Asana task
+      prior_sequence:
+        - |-
+          issues = Jira_Issue__2_0_0__retrievewithwhere_Issue()
+          for issue in issues:
+            if issue.fields == None:
+              task = Asana_Tasks__2_0_0__create_Tasks()
+              email = Gmail_mail__2_0_0__create_mail()
+            else:
+              message = Slack_message__3_0_0__create_message()
+      prior_context: []
+      bpmn: 
+        - $ref: "context/uid_13_context.bpmn"
+    expected_output:
+      sequence:
+        - |-
+          issues = Jira_Issue__2_0_0__retrievewithwhere_Issue()
+          for issue in issues:
+            if issue.fields == None:
+              task = Asana_Tasks__2_0_0__create_Tasks()
+              attachment = Asana_Attachments__2_0_0__create_Attachments()
+              email = Gmail_mail__2_0_0__create_mail()
+            else:
+              message = Slack_message__3_0_0__create_message()
+      bpmn: 
+        - $ref: "output/uid_13_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "14"
+        - conditional_update
+        - conditional_update_add
+      uid: 14
+    input:
+      utterance: |-
+        If the campaign type is "Finance", create a board in Monday.com . 
+      prior_sequence:
+        - |-
+          campaigns = Marketo_campaigns__3_0_0__retrievewithwhere_campaigns()
+          for campaign in campaigns:
+            if campaign.type == 'Finance':
+              applicants = Microsoft_Dynamics_365_for_Finance_and_Operations_Applicant__2_0_0__retrievewithwhere_Applicant()
+      prior_context: []
+      bpmn: 
+        - $ref: "context/uid_14_context.bpmn"
+    expected_output:
+      sequence:
+        - |-
+          campaigns = Marketo_campaigns__3_0_0__retrievewithwhere_campaigns()
+          for campaign in campaigns:
+            if campaign.type == 'Finance':
+              applicants = Microsoft_Dynamics_365_for_Finance_and_Operations_Applicant__2_0_0__retrievewithwhere_Applicant()
+              board = monday_com_Board__2_0_0__create_Board()
+      bpmn: 
+        - $ref: "output/uid_14_output.bpmn"
+    
+  - _metadata:
+      tags:
+        - "15"
+        - conditional_update
+        - conditional_update_add
+      uid: 15
+    input:
+      utterance: |-
+        if the team's name is "internal", send an email using gmail
+      prior_sequence:
+        - |-
+          teams = Trello_Organization__2_0_0__retrievewithwhere_Organization()
+          for team in teams:
+            if team.name == "customer":
+              lead = Marketo_leads__3_0_0__create_leads()
+      prior_context: []
+      bpmn: 
+        - $ref: "context/uid_15_context.bpmn"
+    expected_output:
+      sequence:
+        - |-
+          teams = Trello_Organization__2_0_0__retrievewithwhere_Organization()
+          for team in teams:
+            if team.name == "customer":
+              lead = Marketo_leads__3_0_0__create_leads()
+            elif team.name == "internal":
+              email = Gmail_mail__2_0_0__create_mail()
+      bpmn: 
+        - $ref: "output/uid_15_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "16"
+        - conditional_update
+        - conditional_update_replace
+      uid: 16
+    input:
+      utterance: |-
+        Replace gmail with outlook
+      prior_sequence:
+        - |-
+          teams = Trello_Organization__2_0_0__retrievewithwhere_Organization()
+          for team in teams:
+            if team.name == "customer":
+              lead = Marketo_leads__3_0_0__create_leads()
+            elif team.name == "internal":
+              email = Gmail_mail__2_0_0__create_mail()
+      prior_context: []
+      bpmn: 
+        - $ref: "context/uid_16_context.bpmn"
+    expected_output:
+      sequence:
+        - |-
+          teams = Trello_Organization__2_0_0__retrievewithwhere_Organization()
+          for team in teams:
+            if team.name == "customer":
+              lead = Marketo_leads__3_0_0__create_leads()
+            elif team.name == "internal":
+              email = Microsoft_Exchange_Messages__2_0_0__SENDOUTLOOK_Messages()
+      bpmn: 
+        - $ref: "output/uid_16_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "17"
+        - conditional_update
+        - conditional_update_delete
+      uid: 17
+    input:
+      utterance: |-
+        Do not create servicenow incident
+      prior_sequence:
+        - |-
+          topics = Amazon_SNS_Topic__3_0_0__retrievewithwhere_Topic()
+          for topic in topics:
+            if topic.topicarn == "critical":
+              email = Microsoft_Exchange_Messages__2_0_0__SENDOUTLOOK_Messages()
+              incident = ServiceNow_incident__4_0_0__create_incident()
+      prior_context: []
+      bpmn:
+        $ref: "context/uid_17_context.bpmn"
+    expected_output:
+      sequence:
+        - |-
+          topics = Amazon_SNS_Topic__3_0_0__retrievewithwhere_Topic()
+          for topic in topics:
+            if topic.topicarn == "critical":
+              email = Microsoft_Exchange_Messages__2_0_0__SENDOUTLOOK_Messages()
+      bpmn:
+        $ref: "output/uid_17_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "18"
+        - conditional_update
+        - conditional_update_replace
+      uid: 18
+    input:
+      utterance: |-
+        Create zendesk ticket instead of servicenow incident
+      prior_sequence:
+        - |-
+          topics = Amazon_SNS_Topic__3_0_0__retrievewithwhere_Topic()
+          for topic in topics:
+            if topic.topicarn == "critical":
+              email = Microsoft_Exchange_Messages__2_0_0__SENDOUTLOOK_Messages()
+              incident = ServiceNow_incident__4_0_0__create_incident()
+      prior_context: []
+      bpmn:
+        $ref: "context/uid_18_context.bpmn"
+    expected_output:
+      sequence:
+        - |-
+          topics = Amazon_SNS_Topic__3_0_0__retrievewithwhere_Topic()
+          for topic in topics:
+            if topic.topicarn == "critical":
+              email = Microsoft_Exchange_Messages__2_0_0__SENDOUTLOOK_Messages()
+              ticket = Zendesk_Service_Ticket__2_0_0__create_Ticket()
+      bpmn:
+        $ref: "output/uid_18_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "19"
+        - conditional_update
+        - conditional_update_add
+      uid: 19
+    input:
+      utterance: |-
+        Create a service now incident along with the zendesk ticket
+      prior_sequence:
+        - |-
+          topics = Amazon_SNS_Topic__3_0_0__retrievewithwhere_Topic()
+          for topic in topics:
+            if topic.topicarn == "critical":
+              email = Microsoft_Exchange_Messages__2_0_0__SENDOUTLOOK_Messages()
+              ticket = Zendesk_Service_Ticket__2_0_0__create_Ticket()
+      prior_context: []
+      bpmn:
+        $ref: "context/uid_19_context.bpmn"
+    expected_output:
+      sequence:
+        - |-
+          topics = Amazon_SNS_Topic__3_0_0__retrievewithwhere_Topic()
+          for topic in topics:
+            if topic.topicarn == "critical":
+              email = Microsoft_Exchange_Messages__2_0_0__SENDOUTLOOK_Messages()
+              ticket = Zendesk_Service_Ticket__2_0_0__create_Ticket()
+              incident = ServiceNow_incident__4_0_0__create_incident()
+      bpmn:
+        $ref: "output/uid_19_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "20"
+        - conditional
+      uid: 20
+    input:
+      utterance: |-
+        Retrieve all the trello teams from my org. For each team, if it is of type "customer", then create a marketo lead
+      prior_sequence: ""
+      prior_context: []
+    expected_output:
+      sequence:
+        - |-
+          teams = Trello_Organization__2_0_0__retrievewithwhere_Organization()
+          for team in teams:
+            if team.type == "customer":
+              lead = Marketo_leads__3_0_0__create_leads()
+      bpmn:
+        $ref: "output/uid_20_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "21"
+        - conditional
+      uid: 21
+    input:
+      utterance: |-
+        For each of my Amazon SNS topics, if it's type is critical then send an outlook mail and create a ticket on zendesk.
+      prior_sequence: ""   
+      prior_context: []
+    expected_output:
+      sequence:
+        - |-
+          topics = Amazon_SNS_Topic__3_0_0__retrievewithwhere_Topic()
+          for topic in topics:
+            if topic.type == "critical":
+              email = Microsoft_Exchange_Messages__2_0_0__SENDOUTLOOK_Messages()
+              ticket = Zendesk_Service_Ticket__2_0_0__create_Ticket()
+      bpmn:
+        $ref: "output/uid_21_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "22"
+        - linear
+      uid: 22
+    input:
+      utterance: |-
+        Create a new github repository and a new issue in that repository and send the issue ID in a slack message
+      prior_sequence: ""
+      prior_context: []
+    expected_output:
+      sequence:
+        - |-
+          repository = GitHub_Repository__3_0_0__create_Repository()
+          issueID = GitHub_Issue__3_0_0__create_Issue()
+          message = Slack_message__3_0_0__create_message()
+      bpmn:
+        $ref: "output/uid_22_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "23"
+        - linear
+      uid: 23
+    input:
+      utterance: |-
+        Create a new zendesk ticket and a corresponding task in the default Microsoft To Do list
+      prior_sequence: ""
+      prior_context: []
+    expected_output:
+      sequence:
+        - |-
+          ticket = Zendesk_Service_Ticket__2_0_0__create_Ticket()
+          task = Microsoft_To_Do_postUsersByUserIdTodoListsByTodoTaskListIdTasks_model__1_0_0__postUsersByUserIdTodoListsByTodoTaskListIdTasks_postUsersByUserIdTodoListsByTodoTaskListIdTasks_model()
+      bpmn:
+        $ref: "output/uid_23_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "24"
+        - linear
+      uid: 24
+    input:
+      utterance: |-
+        Retrieve all available tasks from Asana and send a Twilio voice message as well as a slack message
+      prior_sequence: ""
+      prior_context: []
+    expected_output:
+      sequence:
+        - |-
+          tasks = Asana_Tasks__2_0_0__retrievewithwhere_Tasks()      
+          voice = Twilio_postMessagesjsonByFromphone_model__2_0_0__postMessagesjsonByFromphone_postMessagesjsonByFromphone_model()
+          slack = Slack_message__3_0_0__create_message()
+      bpmn:
+        $ref: "output/uid_24_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "25"
+        - conditional
+      uid: 25
+    input:
+      utterance: |-
+        Retrieve all available tasks from Asana and send a Twilio voice message for each task
+      prior_sequence: ""
+      prior_context: []
+    expected_output:
+      sequence:
+        - |-
+          tasks = Asana_Tasks__2_0_0__retrievewithwhere_Tasks()
+          for task in tasks:   
+            message = Twilio_postMessagesjsonByFromphone_model__2_0_0__postMessagesjsonByFromphone_postMessagesjsonByFromphone_model()
+      bpmn:
+        $ref: "output/uid_25_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "26"
+        - conditional
+      uid: 26
+    input:
+      utterance: |-
+        Send a status message via Gmail for each lead retrieved from Salesforce
+      prior_sequence: ""
+      prior_context: []
+    expected_output:
+      sequence:
+        - |-
+          leads = Salesforce_Lead__5_0_0__retrievewithwhere_Lead()
+          for lead in leads:
+            message = Gmail_mail__2_0_0__create_mail()
+      bpmn:
+        $ref: "output/uid_26_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "27"
+        - linear
+      uid: 27
+    input:
+      utterance: |-
+        Create an offboarding zendesk ticket and retrieve and delete the corresponding ms onedrive folder for a user
+      prior_sequence: ""
+      prior_context: []
+    expected_output:
+      sequence:
+        - |-
+          ticket = Zendesk_Service_Ticket__2_0_0__create_Ticket()
+          folder = Microsoft_OneDrive_for_Business_Folder__4_0_0__retrievewithwhere_Folder()
+          folder = Microsoft_OneDrive_for_Business_Folder__4_0_0__deletewithwhere_Folder()
+      bpmn:
+        $ref: "output/uid_27_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "28"
+        - conditional
+      uid: 28
+    input:
+      utterance: |-
+        Retrieve all salesforce leads and create a jira issue for each lead that has a 'hot' rating
+      prior_sequence: ""
+      prior_context: []
+    expected_output:
+      sequence:
+        - |-
+          leads = Salesforce_Lead__5_0_0__retrievewithwhere_Lead()
+          for lead in leads:
+            if lead.rating == 'hot':
+              issue = Jira_Issue__2_0_0__create_Issue()
+      bpmn:
+        $ref: "output/uid_29_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "29"
+        - linear
+      uid: 29
+    input:
+      utterance: |-
+        Create a new Salesforce contact and also a corresponding file in a new Box folder. Then send am email using gmail 
+      prior_sequence: ""
+      prior_context: []
+    expected_output:
+      sequence:
+        - |-
+          contact = Salesforce_Contact__5_0_0__create_Contact()
+          folder = Box_Folder__3_0_0__create_Folder()
+          file = Box_File__3_0_0__create_File()
+          mail = Gmail_mail__2_0_0__create_mail()
+      bpmn:
+        $ref: "output/uid_29_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "30"
+        - conditional
+      uid: 30
+    input:
+      utterance: |-
+        Retrieve and delete all box files that belong to a given user. Next enter a new jira issue. 
+      prior_sequence: ""
+      prior_context: []
+    expected_output:
+      sequence:
+        - |-
+          files = Box_File__3_0_0__retrievewithwhere_File()
+          for file in files:
+            if file.owned_by == user:
+              boxfile = Box_File__3_0_0__deletewithwhere_File()
+          issue = Jira_Issue__2_0_0__create_Issue()
+      bpmn:
+        $ref: "output/uid_30_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "31"
+        - conditional
+        - user_task
+      uid: 31
+    input:
+      utterance: |-
+        Create a new github repo and get approval from the supervisor. If the supervisor does not approve, send a slack message
+      prior_sequence: ""
+      prior_context: []
+    expected_output:
+      sequence:
+        - |-
+          repository = GitHub_Repository__3_0_0__create_Repository()
+          approval = user_task("get supervisor approval")
+          if approval == None:
+            message = Slack_message__3_0_0__create_message()
+      bpmn:
+        $ref: "output/uid_31_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "32"
+        - linear
+        - user_task
+      uid: 32
+    input:
+      utterance: |-
+        Create a new gitlab project, send an outlook message and check with the manager.
+      prior_sequence: ""
+      prior_context: []
+    expected_output:
+      sequence:
+        - |-
+          project = GitLab_Project__5_0_0__create_Project()
+          message = Microsoft_Exchange_Messages__2_0_0__SENDOUTLOOK_Messages()
+          task = user_task("check with manager")
+      bpmn:
+        $ref: "output/uid_32_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "33"
+        - linear
+      uid: 33
+    input:
+      utterance: |-
+        Get service now tickets and users.
+      prior_sequence: ""
+      prior_context: []
+    expected_output:
+      sequence:
+        - |-
+          tickets = ServiceNow_ticket__5_0_0__retrievewithwhere_ticket()
+          users = ServiceNow_sys_user__5_0_0__retrievewithwhere_sys_user()
+      bpmn:
+        $ref: "output/uid_33_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "34"
+        - linear
+      uid: 34
+    input:
+      utterance: |-
+        Create sharepoint file. Before that create a new folder.
+      prior_sequence: ""
+      prior_context: []
+    expected_output:
+      sequence:
+        - |-
+          folder = Microsoft_SharePoint_Folder__204_0_0__create_Folder()
+          file = Microsoft_SharePoint_File__204_0_0__create_File()
+      bpmn:
+        $ref: "output/uid_34_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "35"
+        - linear
+      uid: 35
+    input:
+      utterance: |-
+        Obtain all power bi workspaces, scorecards and goals
+      prior_sequence: ""
+      prior_context: []
+    expected_output:
+      sequence:
+        - |-
+          workspaces = Microsoft_Power_BI_Workspace__2_0_0__retrievewithwhere_Workspace()
+          scorecards = Microsoft_Power_BI_Scorecard__2_0_0__retrievewithwhere_Scorecard()
+          goals = Microsoft_Power_BI_Goal__2_0_0__retrievewithwhere_Goal()
+      bpmn:
+        $ref: "output/uid_35_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "36"
+        - linear
+      uid: 36
+    input:
+      utterance: |-
+        Create a coupa invoice and expense report
+      prior_sequence: ""
+      prior_context: []
+    expected_output:
+      sequence:
+        - |-
+          invoice = Coupa_invoices__4_0_0__create_invoices()
+          expense_report = Coupa_expense_reports__4_0_0__create_expense_reports()
+      bpmn:
+        $ref: "output/uid_36_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "37"
+        - linear
+      uid: 37
+    input:
+      utterance: |-
+        Create a zendesk product. Make a new asset and update product details.
+      prior_sequence: ""
+      prior_context: []
+    expected_output:
+      sequence:
+        - |-
+          product = Zendesk_Service_product__3_0_0__create_product()
+          asset = Zendesk_Service_asset__3_0_0__create_asset()
+          product = Zendesk_Service_product__3_0_0__updatewithwhere_product()
+      bpmn:
+        $ref: "output/uid_37_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "38"
+        - linear
+      uid: 38
+    input:
+      utterance: |-
+        Get a todo list given an id and create a new task
+      prior_sequence: ""
+      prior_context: []
+    expected_output:
+      sequence:
+        - |-
+          list = Microsoft_To_Do_getUsersByUserIdTodoListsByTodoTaskListId_model__1_0_0__getUsersByUserIdTodoListsByTodoTaskListId_getUsersByUserIdTodoListsByTodoTaskListId_model()
+          task = Microsoft_To_Do_postUsersByUserIdTodoListsByTodoTaskListIdTasks_model__1_0_0__postUsersByUserIdTodoListsByTodoTaskListIdTasks_postUsersByUserIdTodoListsByTodoTaskListIdTasks_model()
+      bpmn:
+        $ref: "output/uid_38_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "39"
+        - linear
+      uid: 39
+    input:
+      utterance: |-
+        Get a calendar and schedule a new meeting
+      prior_sequence: ""
+      prior_context: []
+    expected_output:
+      sequence:
+        - |-
+          calendar = Microsoft_Exchange_Calendars__2_0_0__retrievewithwhere_Calendars()
+          meeting = Microsoft_Exchange_Events__2_0_0__create_Events()
+      bpmn:
+        $ref: "output/uid_39_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "40"
+        - linear
+      uid: 40
+    input:
+      utterance: |-
+        Cancel a calendar meeting
+      prior_sequence: ""
+      prior_context: []
+    expected_output:
+      sequence:
+        - |-
+          meeting = Microsoft_Exchange_Events__2_0_0__deletewithwhere_Events()
+      bpmn:
+        $ref: "output/uid_40_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "41"
+        - linear
+      uid: 41
+    input:
+      utterance: |-
+        Get a github branch and submit a PR from it. Then make a new issue.
+      prior_sequence: ""
+      prior_context: []
+    expected_output:
+      sequence:
+        - |-
+          branch = GitHub_Branch__3_0_0__retrievewithwhere_Branch()
+          pr = GitHub_Pullrequest__3_0_0__create_Pullrequest()
+          issue = GitHub_Issue__3_0_0__create_Issue()
+      bpmn:
+        $ref: "output/uid_41_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "42"
+        - linear
+      uid: 42
+    input:
+      utterance: |-
+        Create a new calendar event and share its link
+      prior_sequence: ""
+      prior_context: []
+    expected_output:
+      sequence:
+        - |-
+          event = Microsoft_Exchange_Events__2_0_0__create_Events()
+          link = Calendly_schedulingLink__1_0_0__create_schedulingLink()
+      bpmn:
+        $ref: "output/uid_42_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "43"
+        - linear
+      uid: 43
+    input:
+      utterance: |-
+        Compile sales orders, price lists, invoices and send them to the manager on slack
+      prior_sequence: ""
+      prior_context: []
+    expected_output:
+      sequence:
+        - |-
+          orders = Microsoft_Dynamics_365_for_Sales_SalesOrder__7_0_0__retrievewithwhere_SalesOrder()
+          lists = Microsoft_Dynamics_365_for_Sales_PriceLevel__7_0_0__retrievewithwhere_PriceLevel()
+          invoices = Microsoft_Dynamics_365_for_Sales_Invoice__7_0_0__retrievewithwhere_Invoice()
+          message = Slack_message__3_0_0__create_message()
+      bpmn:
+        $ref: "output/uid_43_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "44"
+        - linear_update
+        - linear_update_add
+      uid: 44
+    input:
+      utterance: |-
+        Send the manager an email on outlook too.
+      prior_sequence:
+        - |-
+          orders = Microsoft_Dynamics_365_for_Sales_SalesOrder__7_0_0__retrievewithwhere_SalesOrder()
+          lists = Microsoft_Dynamics_365_for_Sales_PriceLevel__7_0_0__retrievewithwhere_PriceLevel()
+          invoices = Microsoft_Dynamics_365_for_Sales_Invoice__7_0_0__retrievewithwhere_Invoice()
+          message = Slack_message__3_0_0__create_message()
+      prior_context: []
+      bpmn:
+        $ref: "context/uid_44_context.bpmn"
+    expected_output:
+      sequence:
+        - |-
+          orders = Microsoft_Dynamics_365_for_Sales_SalesOrder__7_0_0__retrievewithwhere_SalesOrder()
+          lists = Microsoft_Dynamics_365_for_Sales_PriceLevel__7_0_0__retrievewithwhere_PriceLevel()
+          invoices = Microsoft_Dynamics_365_for_Sales_Invoice__7_0_0__retrievewithwhere_Invoice()
+          message = Slack_message__3_0_0__create_message()
+          email = Microsoft_Exchange_Messages__2_0_0__SENDOUTLOOK_Messages()
+      bpmn:
+        $ref: "output/uid_44_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "45"
+        - linear_update
+        - linear_update_add
+      uid: 45
+    input:
+      utterance: |-
+        Add a comment
+      prior_sequence:
+        - |-
+          branch = GitHub_Branch__3_0_0__retrievewithwhere_Branch()
+          pr = GitHub_Pullrequest__3_0_0__create_Pullrequest()
+      prior_context: []
+      bpmn:
+        $ref: "context/uid_45_context.bpmn"
+    expected_output:
+      sequence:
+        - |-
+          branch = GitHub_Branch__3_0_0__retrievewithwhere_Branch()
+          pr = GitHub_Pullrequest__3_0_0__create_Pullrequest()
+          comment = GitHub_Comment__3_0_0__create_Comment()
+      bpmn:
+        $ref: "output/uid_45_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "46"
+        - linear_update
+        - linear_update_add
+      uid: 46
+    input:
+      utterance: |-
+        List all the issues and existing branches
+      prior_sequence:
+        - |-
+          branch = GitLab_Branch__5_0_0__create_Branch()
+      prior_context: []
+      bpmn:
+        $ref: "context/uid_46_context.bpmn"
+    expected_output:
+      sequence:
+        - |-
+          branch = GitLab_Branch__5_0_0__create_Branch()
+          issues = GitLab_Issue__5_0_0__retrievewithwhere_Issue()
+          branches = GitLab_Branch__5_0_0__retrievewithwhere_Branch()
+      bpmn:
+        $ref: "output/uid_46_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "47"
+        - linear_update
+        - linear_update_add
+      uid: 47
+    input:
+      utterance: |-
+        List all the issues
+      prior_sequence:
+        - |-
+          project = Jira_Project__2_0_0__retrievewithwhere_Project()
+      prior_context: []
+      bpmn:
+        $ref: "context/uid_47_context.bpmn"
+    expected_output:
+      sequence:
+        - |-
+          project = Jira_Project__2_0_0__retrievewithwhere_Project()
+          issues = Jira_Issue__2_0_0__retrievewithwhere_Issue()
+      bpmn:
+        $ref: "output/uid_47_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "48"
+        - conditional_update
+        - conditional_update_add
+      uid: 48
+    input:
+      utterance: |-
+        Create a copy of each of these issues. Then send a slack message to the team
+      prior_sequence:
+        - |-
+          project = Jira_Project__2_0_0__retrievewithwhere_Project()
+          issues = Jira_Issue__2_0_0__retrievewithwhere_Issue()
+      prior_context: []
+      bpmn:
+        $ref: "context/uid_48_context.bpmn"
+    expected_output:
+      sequence:
+        - |-
+          project = Jira_Project__2_0_0__retrievewithwhere_Project()
+          issues = Jira_Issue__2_0_0__retrievewithwhere_Issue()
+          for issue in issues:
+            issue_copy = Jira_Issue__2_0_0__create_Issue()
+          message = Slack_message__3_0_0__create_message()
+      bpmn:
+        $ref: "output/uid_48_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "49"
+        - linear_update
+        - linear_update_add
+        - user_task
+      uid: 49
+    input:
+      utterance: |-
+        Copy this project to Corpora
+      prior_sequence:
+        - |-
+          project = Jira_Project__2_0_0__retrievewithwhere_Project()
+      prior_context: []
+      bpmn:
+        $ref: "context/uid_49_context.bpmn"
+    expected_output:
+      sequence:
+        - |-
+          project = Jira_Project__2_0_0__retrievewithwhere_Project()
+          task = user_task("Copy project to Corpora")
+      bpmn:
+        $ref: "output/uid_49_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "50"
+        - linear_update
+        - linear_update_add
+      uid: 50
+    input:
+      utterance: |-
+        Add new person and submit a ticket.
+      prior_sequence:
+        - |-
+          asset = Zendesk_Service_asset__3_0_0__create_asset()
+      prior_context: []
+      bpmn:
+        $ref: "context/uid_50_context.bpmn"
+    expected_output:
+      sequence:
+        - |-
+          asset = Zendesk_Service_asset__3_0_0__create_asset()
+          person = Zendesk_Service_person__3_0_0__create_person()
+          ticket = Zendesk_Service_Ticket__2_0_0__create_Ticket()
+      bpmn:
+        $ref: "output/uid_50_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "51"
+        - linear
+        - user_task
+      uid: 51
+    input:
+      utterance: |-
+        Start a new application and then create an applicant.
+      prior_sequence: ""
+      prior_context: []
+    expected_output:
+      sequence:
+        - |-
+          task = user_task("Start a new application")
+          applicant = Microsoft_Dynamics_365_for_Finance_and_Operations_Applicant__2_0_0__create_Applicant()
+      bpmn:
+        $ref: "output/uid_51_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "52"
+        - conditional
+      uid: 52
+    input:
+      utterance: |-
+        Retrieve a onedrive folder and copy each file to a new folder in Box
+      prior_sequence: ""
+      prior_context: []
+    expected_output:
+      sequence:
+        - |-
+          folder = Microsoft_OneDrive_for_Business_Folder__4_0_0__retrievewithwhere_Folder()
+          new_folder = Box_Folder__3_0_0__create_Folder()
+          folder_items = Microsoft_OneDrive_for_Business_FolderItem__4_0_0__retrievewithwhere_FolderItem()
+          for item in folder_items:
+            file = Box_File__3_0_0__COPYFILE_File()
+      bpmn:
+        $ref: "output/uid_52_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "53"
+        - conditional_update
+        - conditional_update_add
+      uid: 53
+    input:
+      utterance: |-
+        Dont copy the file if its type is "confidential"
+      prior_sequence:
+        - |-
+          folder = Microsoft_OneDrive_for_Business_Folder__4_0_0__retrievewithwhere_Folder()
+          folder_items = Microsoft_OneDrive_for_Business_FolderItem__4_0_0__retrievewithwhere_FolderItem()
+          new_folder = Box_Folder__3_0_0__create_Folder()
+          for item in folder_items:
+            file = Box_File__3_0_0__COPYFILE_File()
+      prior_context: []
+      bpmn:
+        $ref: "context/uid_53_context.bpmn"
+    expected_output:
+      sequence:
+        - |-
+          folder = Microsoft_OneDrive_for_Business_Folder__4_0_0__retrievewithwhere_Folder()
+          folder_items = Microsoft_OneDrive_for_Business_FolderItem__4_0_0__retrievewithwhere_FolderItem()
+          new_folder = Box_Folder__3_0_0__create_Folder()
+          for item in folder_items:
+            if item.itemType != "confidential":
+              file = Box_File__3_0_0__COPYFILE_File()
+      bpmn:
+        $ref: "output/uid_53_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "54"
+        - linear
+        - user_task
+      uid: 54
+    input:
+      utterance: |-
+        Get the employee timesheet and check for compliance
+      prior_sequence: ""
+      prior_context: []
+    expected_output:
+      sequence:
+        - |-
+          timesheet = bambooHR_timetracking__2_0_0__retrievewithwhere_timetracking()
+          task = user_task("Check for compliance")
+      bpmn:
+        $ref: "output/uid_54_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "55"
+        - conditional
+      uid: 55
+    input:
+      utterance: |-
+        Copy all leads from marketo to salesforce
+      prior_sequence: ""
+      prior_context: []
+    expected_output:
+      sequence:
+        - |-
+          leads = Marketo_leads__3_0_0__retrievewithwhere_leads()
+          for lead in leads:
+            lead = Salesforce_Lead__5_0_0__create_Lead()
+      bpmn:
+        $ref: "output/uid_55_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "56"
+        - conditional_update
+        - conditional_update_add
+      uid: 56
+    input:
+      utterance: |-
+        Send a teams message after finishing
+      prior_sequence:
+        - |-
+          leads = Marketo_leads__3_0_0__retrievewithwhere_leads()
+          for lead in leads:
+            lead = Salesforce_Lead__5_0_0__create_Lead()
+      prior_context: []
+      bpmn:
+        $ref: "context/uid_56_context.bpmn"
+    expected_output:
+      sequence:
+        - |-
+          leads = Marketo_leads__3_0_0__retrievewithwhere_leads()
+          for lead in leads:
+            lead = Salesforce_Lead__5_0_0__create_Lead()
+          message = Microsoft_Teams_Message__2_0_0__create_Message()
+      bpmn:
+        $ref: "output/uid_56_output.bpmn"
+          
+  - _metadata:
+      tags:
+        - "57"
+        - linear
+        - user_task
+      uid: 57
+    input:
+      utterance: |-
+        Make a new git pipeline and project. Find a host and then release it. 
+      prior_sequence: ""
+      prior_context: []
+    expected_output:
+      sequence:
+        - |-
+          pipeline = GitLab_Pipeline__5_0_0__create_Pipeline()
+          project = GitLab_Project__5_0_0__create_Project()
+          task = user_task("Find a host")
+          release = GitLab_Release__5_0_0__create_Release()
+      bpmn:
+        $ref: "output/uid_57_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "58"
+        - linear
+      uid: 58
+    input:
+      utterance: |-
+        Get the servicenow incident report and attach it to a new zendesk ticket
+      prior_sequence: ""
+      prior_context: []
+    expected_output:
+      sequence:
+        - |-
+          incident = ServiceNow_incident__4_0_0__retrievewithwhere_incident()
+          ticket = Zendesk_Service_Ticket__2_0_0__create_Ticket()
+          ticket = Zendesk_Service_ticketAttachment__2_0_0__UPLOADATTACHMENT_ticketAttachment()
+      bpmn:
+        $ref: "output/uid_58_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "59"
+        - linear
+        - user_task
+      uid: 59
+    input:
+      utterance: |-
+        Make a new active directory domain on azure and add a new device to it and authenticate it.
+      prior_sequence: ""
+      prior_context: []
+    expected_output:
+      sequence:
+        - |-
+          domain = Microsoft_Entra_ID_Domains__4_0_0__create_Domains()
+          task = user_task("Add a device")
+          task = user_task("Authenticate device")
+      bpmn:
+        $ref: "output/uid_59_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "60"
+        - linear
+      uid: 60
+    input:
+      utterance: |-
+        Create a new COS bucket accessible to the employees in the department. Upload the model checkpoint to it
+      prior_sequence: ""
+      prior_context: []
+    expected_output:
+      sequence:
+        - |-
+          bucket = IBM_Cloud_Object_Storage_S3_bucket__4_0_0__create_bucket()
+          bucket = IBM_Cloud_Object_Storage_S3_bucketAcl__4_0_0__CREATE_STANDARD_ACL_FOR_BUCKET_bucketAcl()
+          object = IBM_Cloud_Object_Storage_S3_object__4_0_0__create_object()
+      bpmn:
+        $ref: "output/uid_60_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "61"
+        - linear
+      uid: 61
+    input:
+      utterance: |-
+        Fetch all the dataflows, datasets, and goals from the power BI dashboard and make a new dashboard
+      prior_sequence: ""
+      prior_context: []
+    expected_output:
+      sequence:
+        - |-
+          dataflows = Microsoft_Power_BI_Dataflow__2_0_0__retrievewithwhere_Dataflow()
+          datasets = Microsoft_Power_BI_Dataset__2_0_0__retrievewithwhere_Dataset()
+          goals = Microsoft_Power_BI_Goal__2_0_0__retrievewithwhere_Goal()
+          workspace = Microsoft_Power_BI_Workspace__2_0_0__create_Workspace()
+      bpmn:
+        $ref: "output/uid_61_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "62"
+        - linear
+        - user_task
+      uid: 62
+    input:
+      utterance: |-
+        Login to google cloud account. Then create a new COS bucket and upload the website homepage
+      prior_sequence: ""
+      prior_context: []
+    expected_output:
+      sequence:
+        - |-
+          task = user_task("Login to google cloud account")
+          bucket = Google_Cloud_Storage_Bucket__4_0_0__create_Bucket()
+          object = Google_Cloud_Storage_Object__4_0_0__upsertwithwhere_Object()
+      bpmn:
+        $ref: "output/uid_62_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "63"
+        - linear
+      uid: 63
+    input:
+      utterance: |-
+        Subscribe to the "dogs" list using amazon notification service. List all other subscriptions too.
+      prior_sequence: ""
+      prior_context: []
+    expected_output:
+      sequence:
+        - |-
+          subscription = Amazon_SNS_Subscription__3_0_0__create_Subscription()
+          subscriptions = Amazon_SNS_Subscription__3_0_0__retrievewithwhere_Subscription()
+      bpmn:
+        $ref: "output/uid_63_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "64"
+        - linear
+        - user_task
+      uid: 64
+    input:
+      utterance: |-
+        Create a new lambda function called "calculator" and then invoke it.
+      prior_sequence: ""
+      prior_context: []
+    expected_output:
+      sequence:
+        - |-
+          task = user_task("Create new lambda function called calculator")
+          function = AWS_Lambda_function__2_0_0__INVOKEFUNCTION_function()
+      bpmn:
+        $ref: "output/uid_64_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "65"
+        - linear
+      uid: 65
+    input:
+      utterance: |-
+        Create - 1. salesforce case 2. account 3. asset
+      prior_sequence: ""
+      prior_context: []
+    expected_output:
+      sequence:
+        - |-
+          case = Salesforce_Case__5_0_0__create_Case()
+          account = Salesforce_Account__5_0_0__create_Account()
+          asset = Salesforce_Asset__8_0_0__create_Asset()
+      bpmn:
+        $ref: "output/uid_65_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "66"
+        - linear
+        - user_task
+      uid: 66
+    input:
+      utterance: |-
+        (a) create a salesforce contract (b) start a cadence (c) get the memmbers in the case team
+      prior_sequence: ""
+      prior_context: []
+    expected_output:
+      sequence:
+        - |-
+          contract = Salesforce_Contract__8_0_0__create_Contract()
+          task = user_task("Start a cadence")
+          members = Salesforce_CaseTeamMember__7_0_0__retrievewithwhere_CaseTeamMember()
+      bpmn:
+        $ref: "output/uid_66_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "67"
+        - linear
+      uid: 67
+    input:
+      utterance: |-
+        Make two trello boards. On the first, add 2 cards. On the second, add one.
+      prior_sequence: ""
+      prior_context: []
+    expected_output:
+      sequence:
+        - |-
+          board1 = Trello_Board__2_0_0__create_Board()
+          card1 = Trello_Card__2_0_0__create_Card()
+          card2 = Trello_Card__2_0_0__create_Card()
+          board2 = Trello_Board__2_0_0__create_Board()
+          card3 = Trello_Card__2_0_0__create_Card()
+      bpmn:
+        $ref: "output/uid_67_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "68"
+        - linear
+        - user_task
+      uid: 68
+    input:
+      utterance: |-
+        Get the candidate name and retrieve resume from the dropbox account
+      prior_sequence: ""
+      prior_context: []
+    expected_output:
+      sequence:
+        - |-
+          candidate_name = user_task("get candidate name")
+          resume = Dropbox_files__3_0_0__retrievewithwhere_files()
+      bpmn:
+        $ref: "output/uid_68_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "69"
+        - conditional
+        - user_task
+      uid: 69
+    input:
+      utterance: |-
+        In slack dms , search for "401k" and list them
+      prior_sequence: ""
+      prior_context: []
+    expected_output:
+      sequence:
+        - |-
+          dms = Slack_im__3_0_0__retrievewithwhere_im()
+          for dm in dms:
+            if "401k" in dm.messages:
+              task = user_task("list message")
+      bpmn:
+        $ref: "output/uid_69_output.bpmn"
+              
+  - _metadata:
+      tags:
+        - "70"
+        - linear
+      uid: 70
+    input:
+      utterance: |-
+        Make a new coupa supplier with the remit address
+      prior_sequence: ""
+      prior_context: []
+    expected_output:
+      sequence:
+        - |-
+          supplier = Coupa_suppliers__4_0_0__create_suppliers()
+          address = Coupa_remit_to_addresses__4_0_0__create_remit_to_addresses()
+      bpmn:
+        $ref: "output/uid_70_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "71"
+        - linear_update
+        - linear_update_add
+      uid: 71
+    input:
+      utterance: |-
+        Add a message to the queue in Amazon SQS before updating the topic
+      prior_sequence:
+        - |-
+          topic = Amazon_SNS_Topic__3_0_0__create_Topic()
+          attachment = Asana_Attachments__2_0_0__create_Attachments()
+          update_topic = Amazon_SNS_Topic__3_0_0__updatewithwhere_Topic()
+      prior_context: []
+      bpmn:
+        $ref: "context/uid_71_context.bpmn"
+    expected_output:
+      sequence:
+        - |-
+          topic = Amazon_SNS_Topic__3_0_0__create_Topic()
+          attachment = Asana_Attachments__2_0_0__create_Attachments()
+          message = Amazon_SQS_Messages__3_0_0__PUTMESSAGE_Messages()
+          update_topic = Amazon_SNS_Topic__3_0_0__updatewithwhere_Topic()
+      bpmn:
+        $ref: "output/uid_71_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "72"
+        - linear_update
+        - linear_update_add
+      uid: 72
+    input:
+      utterance: |-
+        Add a new coupa supplier
+      prior_sequence:
+        - |-
+          invoices = Coupa_invoices__4_0_0__retrievewithwhere_invoices()
+          purchase_orders = Coupa_purchase_orders__4_0_0__retrievewithwhere_purchase_orders()
+          users = Coupa_users__4_0_0__retrievewithwhere_users()
+
+      prior_context: []
+      bpmn:
+        $ref: "context/uid_72_context.bpmn"
+    expected_output:
+      sequence:
+        - |-
+          invoices = Coupa_invoices__4_0_0__retrievewithwhere_invoices()
+          purchase_orders = Coupa_purchase_orders__4_0_0__retrievewithwhere_purchase_orders()
+          users = Coupa_users__4_0_0__retrievewithwhere_users()
+          supplier = Coupa_suppliers__4_0_0__create_suppliers()
+      bpmn:
+        $ref: "output/uid_72_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "73"
+        - linear_update
+        - linear_update_add
+      uid: 73
+    input:
+      utterance: |-
+        Before updating the box file, add a new file in dropbox.
+      prior_sequence:
+        - |-
+          invitees = Calendly_eventInvitee__1_0_0__retrievewithwhere_eventInvitee()
+          box_file = Box_File__3_0_0__create_File()
+          updated_files = Box_File__3_0_0__updatewithwhere_File()
+
+      prior_context: []
+      bpmn:
+        $ref: "context/uid_73_context.bpmn"
+    expected_output:
+      sequence:
+        - |-
+          invitees = Calendly_eventInvitee__1_0_0__retrievewithwhere_eventInvitee()
+          box_file = Box_File__3_0_0__create_File()
+          dropbox_file = Dropbox_files__3_0_0__create_files()
+          updated_files = Box_File__3_0_0__updatewithwhere_File()          
+      bpmn:
+        $ref: "output/uid_73_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "74"
+        - linear_update
+        - linear_update_add
+      uid: 74
+    input:
+      utterance: |-
+        As the first step, create a jira issue.
+      prior_sequence:
+        - |-
+          issue = GitHub_Issue__3_0_0__create_Issue()
+          pr = GitHub_Pullrequest__3_0_0__create_Pullrequest()
+          comment = GitHub_Comment__3_0_0__create_Comment()
+
+      prior_context: []
+      bpmn:
+        $ref: "context/uid_74_context.bpmn"
+    expected_output:
+      sequence:
+        - |-
+          jira_op = Jira_Issue__2_0_0__create_Issue()
+          issue = GitHub_Issue__3_0_0__create_Issue()
+          pr = GitHub_Pullrequest__3_0_0__create_Pullrequest()
+          comment = GitHub_Comment__3_0_0__create_Comment()      
+      bpmn:
+        $ref: "output/uid_74_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "75"
+        - linear_update
+        - linear_update_add
+      uid: 75
+    input:
+      utterance: |-
+         After updating the lead, get all the other leads from marketo
+      prior_sequence:
+        - |-
+          campaigns = Marketo_campaigns__3_0_0__retrievewithwhere_campaigns()
+          lead = Marketo_leads__3_0_0__create_leads()
+          updated_lead = Marketo_leads__3_0_0__updatewithwhere_leads()
+
+      prior_context: []
+      bpmn:
+        $ref: "context/uid_75_context.bpmn"
+    expected_output:
+      sequence:
+        - |-
+          campaigns = Marketo_campaigns__3_0_0__retrievewithwhere_campaigns()
+          lead = Marketo_leads__3_0_0__create_leads()
+          updated_lead = Marketo_leads__3_0_0__updatewithwhere_leads()
+          leads = Marketo_leads__3_0_0__retrievewithwhere_leads()
+      bpmn:
+        $ref: "output/uid_75_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "76"
+        - linear_update
+        - linear_update_delete
+      uid: 76
+    input:
+      utterance: |-
+        Do not retrieve the prs
+      prior_sequence:
+        - |-
+          jira_issues = Jira_Issue__2_0_0__retrievewithwhere_Issue()
+          status = Jira_Status__2_0_0__retrievewithwhere_Status()
+          prs = GitHub_Pullrequest__3_0_0__retrievewithwhere_Pullrequest()
+          comment = GitHub_Comment__3_0_0__create_Comment()
+
+      prior_context: []
+      bpmn:
+        $ref: "context/uid_76_context.bpmn"
+    expected_output:
+      sequence:
+        - |-
+          jira_issues = Jira_Issue__2_0_0__retrievewithwhere_Issue()
+          status = Jira_Status__2_0_0__retrievewithwhere_Status()
+          comment = GitHub_Comment__3_0_0__create_Comment()
+      bpmn:
+        $ref: "output/uid_76_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "77"
+        - linear_update
+        - linear_update_delete
+      uid: 77
+    input:
+      utterance: |-
+        Do not copy object from S3 bucket
+      prior_sequence:
+        - |-
+          buckets = Amazon_S3_bucket__2_0_0__retrievewithwhere_bucket()
+          object = Amazon_S3_object__2_0_0__create_object()
+          copied_object = Amazon_S3_object__2_0_0__COPY_OBJECT_object()
+      prior_context: []
+      bpmn:
+        $ref: "context/uid_77_context.bpmn"
+    expected_output:
+      sequence:
+        - |-
+          buckets = Amazon_S3_bucket__2_0_0__retrievewithwhere_bucket()
+          object = Amazon_S3_object__2_0_0__create_object()
+      bpmn:
+        $ref: "output/uid_77_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "78"
+        - linear_update
+        - linear_update_delete
+      uid: 78
+    input:
+      utterance: |-
+        Don't retrieve the users
+      prior_sequence:
+        - |-
+          users = Coupa_users__4_0_0__retrievewithwhere_users()
+          file = Dropbox_files__3_0_0__create_files()
+      prior_context: []
+      bpmn:
+        $ref: "context/uid_78_context.bpmn"
+    expected_output:
+      sequence:
+        - |-
+          file = Dropbox_files__3_0_0__create_files()
+      bpmn:
+        $ref: "output/uid_78_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "79"
+        - linear_update
+        - linear_update_delete
+      uid: 79
+    input:
+      utterance: |-
+        Do not update case comment
+      prior_sequence:
+        - |-
+          comment = Salesforce_CaseComment__7_0_0__create_CaseComment()
+          update = Salesforce_CaseComment__7_0_0__updatewithwhere_CaseComment()
+          history = Salesforce_CaseHistory__7_0_0__retrievewithwhere_CaseHistory()
+      prior_context: []
+      bpmn:
+        $ref: "context/uid_79_context.bpmn"
+    expected_output:
+      sequence:
+        - |-
+          comment = Salesforce_CaseComment__7_0_0__create_CaseComment()
+          history = Salesforce_CaseHistory__7_0_0__retrievewithwhere_CaseHistory()
+      bpmn:
+        $ref: "output/uid_79_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "80"
+        - linear_update
+        - linear_update_delete
+      uid: 80
+    input:
+      utterance: |-
+        No need to update serviceNow incident
+      prior_sequence:
+        - |-
+          incident = ServiceNow_incident__4_0_0__create_incident()
+          attachement = ServiceNow_sys_attachment__4_0_0__create_sys_attachment()
+          incident_update = ServiceNow_incident__4_0_0__updatewithwhere_incident()
+      prior_context: []
+      bpmn:
+        $ref: "context/uid_80_context.bpmn"
+    expected_output:
+      sequence:
+        - |-
+          incident = ServiceNow_incident__4_0_0__create_incident()
+          attachement = ServiceNow_sys_attachment__4_0_0__create_sys_attachment()
+      bpmn:
+        $ref: "output/uid_80_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "81"
+        - linear_update
+        - linear_update_replace
+      uid: 81
+    input:
+      utterance: |-
+        Replace Box with Dropbox
+      prior_sequence:
+        - |-
+          acticle = ServiceNow_kb_knowledge__5_0_0__create_kb_knowledge()
+          file = Box_File__3_0_0__create_File()
+      prior_context: []
+      bpmn:
+        $ref: "context/uid_81_context.bpmn"
+    expected_output:
+      sequence:
+        - |-
+          acticle = ServiceNow_kb_knowledge__5_0_0__create_kb_knowledge()
+          file = Dropbox_files__3_0_0__create_files()
+      bpmn:
+        $ref: "output/uid_81_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "82"
+        - linear_update
+        - linear_update_replace
+      uid: 82
+    input:
+      utterance: |-
+        Send email using Outlook instead of Gmail 
+      prior_sequence:
+        - |-
+          board = Trello_Board__2_0_0__create_Board()
+          board = Trello_Board__2_0_0__updatewithwhere_Board()
+          email = Gmail_mail__2_0_0__create_mail()
+          card = Trello_Card__2_0_0__create_Card()
+          card = Trello_Member__2_0_0__create_Member()
+          
+      prior_context: []
+      bpmn:
+        $ref: "context/uid_82_context.bpmn"
+    expected_output:
+
+      sequence:
+        - |-
+          board = Trello_Board__2_0_0__create_Board()
+          board = Trello_Board__2_0_0__updatewithwhere_Board()
+          email = Microsoft_Exchange_Messages__2_0_0__SENDOUTLOOK_Messages()
+          card = Trello_Card__2_0_0__create_Card()
+          card = Trello_Member__2_0_0__create_Member()
+      bpmn:
+        $ref: "output/uid_82_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "83"
+        - linear_update
+        - linear_update_replace
+      uid: 83
+    input:
+      utterance: |-
+        Use Microsoft Sharepoint instead of Box 
+      prior_sequence:
+        - |-
+          file = Box_File__3_0_0__create_File()
+          phone_numbers = Twilio_getIncomingPhoneNumbersjson_model__2_0_0__retrievewithwhere_getIncomingPhoneNumbersjson_model()
+          all_messages = Twilio_getServices_model__2_0_0__retrievewithwhere_getServices_model()          
+      prior_context: []
+      bpmn:
+        $ref: "context/uid_83_context.bpmn"
+    expected_output:
+      sequence:
+        - |-
+          file = Microsoft_SharePoint_File__204_0_0__create_File()
+          phone_numbers = Twilio_getIncomingPhoneNumbersjson_model__2_0_0__retrievewithwhere_getIncomingPhoneNumbersjson_model()
+          all_messages = Twilio_getServices_model__2_0_0__retrievewithwhere_getServices_model()          
+      bpmn:
+        $ref: "output/uid_83_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "84"
+        - linear_update
+        - linear_update_replace
+      uid: 84
+    input:
+      utterance: |-
+        Create zendesk ticket instead of serviceNow incident
+      prior_sequence:
+        - |-
+          employees = bambooHR_employees__2_0_0__retrievewithwhere_employees()
+          dependents = bambooHR_dependents__2_0_0__retrievewithwhere_dependents()
+          incident = ServiceNow_incident__4_0_0__create_incident()
+          message = Microsoft_Teams_ChatMessage__2_0_0__create_ChatMessage()
+
+      prior_context: []
+      bpmn:
+        $ref: "context/uid_84_context.bpmn"
+    expected_output:
+      sequence:
+        - |-
+          employees = bambooHR_employees__2_0_0__retrievewithwhere_employees()
+          dependents = bambooHR_dependents__2_0_0__retrievewithwhere_dependents()
+          ticket = Zendesk_Service_Ticket__2_0_0__create_Ticket()
+          message = Microsoft_Teams_ChatMessage__2_0_0__create_ChatMessage()
+      bpmn:
+        $ref: "output/uid_84_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "85"
+        - linear_update
+        - linear_update_replace
+      uid: 85
+    input:
+      utterance: |-
+        Create the board in Trello instead 
+      prior_sequence:
+        - |-
+          issues = GitHub_Issue__3_0_0__retrievewithwhere_Issue()
+          jira_op = Jira_Issue__2_0_0__create_Issue()
+          board = monday_com_Board__2_0_0__create_Board()
+      prior_context: []
+      bpmn:
+        $ref: "context/uid_85_context.bpmn"
+    expected_output:
+      sequence:
+        - |-
+          issues = GitHub_Issue__3_0_0__retrievewithwhere_Issue()
+          jira_op = Jira_Issue__2_0_0__create_Issue()
+          board = Trello_Board__2_0_0__create_Board()
+      bpmn:
+        $ref: "output/uid_85_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "86"
+        - linear_update
+        - linear_update_replace
+      uid: 86
+    input:
+      utterance: |-
+        Instead of slack, send a notification using gmail
+      prior_sequence:
+        - |-
+          ticket = Zendesk_Service_Ticket__2_0_0__create_Ticket()
+          attachment = Zendesk_Service_ticketAttachment__2_0_0__UPLOADATTACHMENT_ticketAttachment()
+          comments = Zendesk_Service_ticketComment__2_0_0__retrievewithwhere_ticketComment()
+          message = Slack_message__3_0_0__create_message()
+      prior_context: []
+      bpmn:
+        $ref: "context/uid_86_context.bpmn"
+    expected_output:
+      sequence:
+        - |-
+          ticket = Zendesk_Service_Ticket__2_0_0__create_Ticket()
+          attachment = Zendesk_Service_ticketAttachment__2_0_0__UPLOADATTACHMENT_ticketAttachment()
+          comments = Zendesk_Service_ticketComment__2_0_0__retrievewithwhere_ticketComment()
+          message = Gmail_mail__2_0_0__create_mail()
+      bpmn:
+        $ref: "output/uid_86_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "87"
+        - conditional_update
+        - conditional_update_delete
+      uid: 87
+    input:
+      utterance: |-
+        Remove the step to create a new Jira issue
+      prior_sequence:
+        - |-
+          devices = Microsoft_Entra_ID_Devices__4_0_0__retrievewithwhere_Devices()
+          for device in devices:
+            if not device.isCompliant:
+              email = Microsoft_Exchange_Messages__2_0_0__SENDOUTLOOK_Messages()
+              jira_issue = Jira_Issue__2_0_0__create_Issue()
+      prior_context: []
+      bpmn:
+        $ref: "context/uid_87_context.bpmn"
+    expected_output:
+      sequence:
+        - |-
+          devices = Microsoft_Entra_ID_Devices__4_0_0__retrievewithwhere_Devices()
+          for device in devices:
+            if not device.isCompliant:
+              email = Microsoft_Exchange_Messages__2_0_0__SENDOUTLOOK_Messages()
+      bpmn:
+        $ref: "output/uid_87_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "88"
+        - conditional_update
+        - conditional_update_delete
+      uid: 88
+    input:
+      utterance: |-
+        No need to create an Amazon S3 bucket
+      prior_sequence:
+        - |-
+          buckets = Amazon_S3_bucket__2_0_0__retrievewithwhere_bucket()
+          if buckets != Null:
+            new_bucket = Amazon_S3_bucket__2_0_0__create_bucket()
+          else:
+            objects = Amazon_S3_object__2_0_0__retrievewithwhere_object()
+      prior_context: []
+      bpmn:
+        $ref: "context/uid_88_context.bpmn"
+    expected_output:
+      sequence:
+        - |-
+          buckets = Amazon_S3_bucket__2_0_0__retrievewithwhere_bucket()
+          if buckets == Null:
+            objects = Amazon_S3_object__2_0_0__retrievewithwhere_object()
+      bpmn:
+        $ref: "output/uid_88_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "89"
+        - conditional_update
+        - conditional_update_delete
+      uid: 89
+    input:
+      utterance: |-
+        We dont need to create an issue, just creating a pull request would be fine
+      prior_sequence:
+        - |-
+          repositories = GitHub_Repository__3_0_0__retrievewithwhere_Repository()
+          for repo in repositories:
+              issue = GitHub_Issue__3_0_0__create_Issue()
+              pull_requests = GitHub_Pullrequest__3_0_0__create_Pullrequest()
+      prior_context: []
+      bpmn:
+        $ref: "context/uid_89_context.bpmn"
+    expected_output:
+      sequence:
+        - |-
+          repositories = GitHub_Repository__3_0_0__retrievewithwhere_Repository()
+          for repo in repositories:
+              pull_requests = GitHub_Pullrequest__3_0_0__create_Pullrequest()
+      bpmn:
+        $ref: "output/uid_89_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "90"
+        - conditional_update
+        - conditional_update_delete
+      uid: 90
+    input:
+      utterance: |-
+        Remove the steps to create a new GitHub issue and send a Slack message
+      prior_sequence:
+        - |-
+          repositories = GitHub_Repository__3_0_0__retrievewithwhere_Repository()
+          for repo in repositories:
+            if repo.has_projects:
+              pull_requests = GitHub_Pullrequest__3_0_0__retrievewithwhere_Pullrequest()
+            else:
+              issue = GitHub_Issue__3_0_0__create_Issue()
+              slack_message = Slack_Message__2_0_0__create_Message()
+      prior_context: []
+      bpmn:
+        $ref: "context/uid_90_context.bpmn"
+    expected_output:
+      sequence:
+        - |-
+          repositories = GitHub_Repository__3_0_0__retrievewithwhere_Repository()
+          for repo in repositories:
+            if repo.has_projects:
+              pull_requests = GitHub_Pullrequest__3_0_0__retrievewithwhere_Pullrequest()
+      bpmn:
+        $ref: "output/uid_90_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "91"
+        - conditional_update
+        - conditional_update_delete
+      uid: 91
+    input:
+      utterance: |-
+        Remove all the steps in the loop except for sending a notification
+      prior_sequence:
+        - |-
+          buckets = Amazon_S3_bucket__2_0_0__retrievewithwhere_bucket()
+          for bucket in buckets:
+            new_bucket = Amazon_S3_bucket__2_0_0__create_bucket()
+            upload_object = Amazon_S3_object__2_0_0__create_object()
+            notification = Amazon_SNS_Topic__3_0_0__PUBLISHMESSAGEONTOPIC_Topic()
+      prior_context: []
+      bpmn:
+        $ref: "context/uid_91_context.bpmn"
+    expected_output:
+      sequence:
+        - |-
+          buckets = Amazon_S3_bucket__2_0_0__retrievewithwhere_bucket()
+          for bucket in buckets:
+            notification = Amazon_SNS_Topic__3_0_0__PUBLISHMESSAGEONTOPIC_Topic()
+      bpmn:
+        $ref: "output/uid_91_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "92"
+        - conditional_update
+        - conditional_update_delete
+      uid: 92
+    input:
+      utterance: |-
+        We dont need the steps to create an S3 bucket
+      prior_sequence:
+        - |-
+          buckets = Amazon_S3_bucket__2_0_0__retrievewithwhere_bucket()
+          for bucket in buckets:
+            if bucket.name == "non-compliant":
+              new_bucket = Amazon_S3_bucket__2_0_0__create_bucket()
+              delete_object = Amazon_S3_object__2_0_0__deletewithwhere_object()
+            else:
+              new_bucket = Amazon_S3_bucket__2_0_0__create_bucket()
+              notification = Amazon_SNS_Topic__3_0_0__PUBLISHMESSAGEONTOPIC_Topic()
+      prior_context: [ ]
+      bpmn:
+        $ref: "context/uid_92_context.bpmn"
+    expected_output:
+      sequence:
+        - |-
+          buckets = Amazon_S3_bucket__2_0_0__retrievewithwhere_bucket()
+          for bucket in buckets:
+            if bucket.name == "non-compliant":
+              delete_object = Amazon_S3_object__2_0_0__deletewithwhere_object()
+            else:
+              notification = Amazon_SNS_Topic__3_0_0__PUBLISHMESSAGEONTOPIC_Topic()
+      bpmn:
+        $ref: "output/uid_92_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "93"
+        - conditional_update
+        - conditional_update_delete
+      uid: 93
+    input:
+      utterance: |-
+        Lets not do anything if the role name is inactive
+      prior_sequence:
+        - |-
+          roles = Salesforce_UserRole__8_0_0__retrievewithwhere_UserRole()
+          for role in roles:
+            if role.name == "inactive":
+              delete_user = Salesforce_UserRole__8_0_0__deletewithwhere_UserRole()
+              notification = Amazon_SNS_Topic__3_0_0__PUBLISHMESSAGEONTOPIC_Topic()
+            else:
+              update_user = Salesforce_UserRole__8_0_0__updatewithwhere_UserRole()
+              email_user = Microsoft_Exchange_Messages__2_0_0__SENDOUTLOOK_Messages()
+      prior_context: []
+      bpmn:
+        $ref: "context/uid_93_context.bpmn"
+    expected_output:
+      sequence:
+        - |-
+          roles = Salesforce_UserRole__8_0_0__retrievewithwhere_UserRole()
+          for role in roles:
+            if role.name != "inactive":
+              update_user = Salesforce_UserRole__8_0_0__updatewithwhere_UserRole()
+              email_user = Microsoft_Exchange_Messages__2_0_0__SENDOUTLOOK_Messages()
+      bpmn:
+        $ref: "output/uid_93_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "94"
+        - conditional_update
+        - conditional_update_delete
+        - user_task
+      uid: 94
+    input:
+      utterance: |-
+        Remove all steps if the folder is empty
+      prior_sequence:
+        - |-
+          folders = Box_Folder__3_0_0__retrievewithwhere_Folder()
+          for folder in folders:
+            if folder.item_status == "empty":
+              new_file = Box_File__3_0_0__create_File()
+              log_entry = user_task("create system log")
+            else:
+              update_folder = Box_Folder__3_0_0__updatewithwhere_Folder()
+              notification = Amazon_SNS_Topic__3_0_0__PUBLISHMESSAGEONTOPIC_Topic()
+      prior_context: []
+      bpmn:
+        $ref: "context/uid_94_context.bpmn"
+    expected_output:
+      sequence:
+        - |-
+          folders = Box_Folder__3_0_0__retrievewithwhere_Folder()
+          for folder in folders:
+            if folder.item_status != "empty":
+              update_folder = Box_Folder__3_0_0__updatewithwhere_Folder()
+              notification = Amazon_SNS_Topic__3_0_0__PUBLISHMESSAGEONTOPIC_Topic()
+      bpmn:
+        $ref: "output/uid_94_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "95"
+        - conditional_update
+        - conditional_update_replace
+      uid: 95
+    input:
+      utterance: |-
+        Replace the step to create a new Salesforce contact with a step to update an existing contact
+      prior_sequence:
+        - |-
+          contacts = Salesforce_Contact__5_0_0__retrievewithwhere_Contact()
+          for contact in contacts:
+            if contact.CleanStatus == "new":
+              new_contact = Salesforce_Contact__5_0_0__create_Contact()
+            else:
+              task = user_task("check compliance")
+      prior_context: []
+      bpmn:
+        $ref: "context/uid_95_context.bpmn"
+    expected_output:
+      sequence:
+        - |-
+          contacts = Salesforce_Contact__5_0_0__retrievewithwhere_Contact()
+          for contact in contacts:
+            if contact.CleanStatus == "new":
+              updated_contact = Salesforce_Contact__5_0_0__updatewithwhere_Contact()
+            else:
+              task = user_task("check compliance")
+      bpmn:
+        $ref: "output/uid_95_output.bpmn"
+  
+  - _metadata:
+      tags:
+        - "96"
+        - conditional_update
+        - conditional_update_add
+      uid: 96
+    input:
+      utterance: |-
+        If the folder collaboration is restricted, change its access settings
+      prior_sequence:
+        - |-
+          folders = Box_Folder__3_0_0__retrievewithwhere_Folder()
+          for folder in folders:
+            if folder.is_collaboration_restricted_to_enterprise == false:
+              new_folder = Box_Folder__3_0_0__COPYFOLDER_Folder()
+      prior_context: []
+      bpmn:
+        $ref: "context/uid_96_context.bpmn"
+    expected_output:
+      sequence:
+        - |-
+          folders = Box_Folder__3_0_0__retrievewithwhere_Folder()
+          for folder in folders:
+            if folder.is_collaboration_restricted_to_enterprise == false:
+              new_folder = Box_Folder__3_0_0__COPYFOLDER_Folder()
+            else:
+              folder = Box_Folder__3_0_0__updatewithwhere_Folder()
+      bpmn:
+        $ref: "output/uid_96_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "97"
+        - conditional_update
+        - conditional_update_replace
+      uid: 97
+    input:
+      utterance: |-
+        Instead of retrieving all the issues just create a new issue in each repo
+      prior_sequence:
+        - |-
+          repositories = GitHub_Repository__3_0_0__retrievewithwhere_Repository()
+          for repo in repositories:
+            new_issue = GitHub_Issue__3_0_0__retrievewithwhere_Issue()
+      prior_context: []
+      bpmn:
+        $ref: "context/uid_97_context.bpmn"
+    expected_output:
+      sequence:
+        - |-
+          repositories = GitHub_Repository__3_0_0__retrievewithwhere_Repository()
+          for repo in repositories:
+            updated_issue = GitHub_Issue__3_0_0__create_Issue()
+      bpmn:
+        $ref: "output/uid_97_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "98"
+        - conditional_update
+        - conditional_update_replace
+      uid: 98
+    input:
+      utterance: |-
+       Instead of creating a new marketing campaign for each high-rated lead, retrieve all existing campaigns 
+      prior_sequence:
+        - |-
+          leads = Salesforce_Lead__5_0_0__retrievewithwhere_Lead()
+          for lead in leads:
+            if lead.rating == "high":
+              new_campaign = Salesforce_Campaign__8_0_0__create_Campaign()
+            else:
+              update_lead = Salesforce_Lead__5_0_0__updatewithwhere_Lead()              
+      prior_context: []
+      bpmn:
+        $ref: "context/uid_98_context.bpmn"
+    expected_output:
+      sequence:
+        - |-
+          leads = Salesforce_Lead__5_0_0__retrievewithwhere_Lead()
+          for lead in leads:
+            if lead.rating == "high":
+              campaigns = Salesforce_Campaign__8_0_0__retrievewithwhere_Campaign()
+            else:
+              update_lead = Salesforce_Lead__5_0_0__updatewithwhere_Lead()
+      bpmn:
+        $ref: "output/uid_98_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "99"
+        - conditional_update
+        - conditional_update_replace
+      uid: 99
+    input:
+      utterance: |-
+        Replace all the create skills with retrieve skills
+      prior_sequence:
+        - |-
+          tasks = Asana_Tasks__2_0_0__retrievewithwhere_Tasks()
+          for task in tasks:
+            if task.completed == true:
+              new_task = Amazon_S3_bucket__2_0_0__create_bucket()
+              new_file = Box_File__3_0_0__create_File()
+              new_issue = GitHub_Issue__3_0_0__create_Issue()
+      prior_context: []
+      bpmn:
+        $ref: "context/uid_99_context.bpmn"
+    expected_output:
+      sequence:
+        - |-
+          tasks = Asana_Tasks__2_0_0__retrievewithwhere_Tasks()
+          for task in tasks:
+            if task.completed == true:
+              retrieve_task = Amazon_S3_bucket__2_0_0__retrievewithwhere_bucket()
+              retrieve_object = Box_File__3_0_0__retrievewithwhere_File()
+              retrieve_queue = GitHub_Issue__3_0_0__retrievewithwhere_Issue()
+      bpmn:
+        $ref: "output/uid_99_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "100"
+        - conditional_update
+        - conditional_update_add
+      uid: 100
+    input:
+      utterance: Delete all tasks marked as completed.
+      prior_sequence: 
+        - |-
+          tasks = Microsoft_Dynamics_365_for_Sales_Task__7_0_0__retrievewithwhere_Task()
+      prior_context: []
+      bpmn:
+        $ref: "context/uid_100_context.bpmn"
+    expected_output:
+      sequence:
+        - |-
+          tasks = Microsoft_Dynamics_365_for_Sales_Task__7_0_0__retrievewithwhere_Task()
+          for task in tasks:
+            if task.statuscode == 'completed':
+              deleted_task = Microsoft_Dynamics_365_for_Sales_Task__7_0_0__deletewithwhere_Task()
+      bpmn:
+        $ref: "output/uid_100_output.bpmn"
+
+  - _metadata:
+      tags:
+        - "101"
+        - conditional
+      uid: 101
+    input:
+      utterance: |-
+        Get all users from Monday.com and retrieve and delete all box folders that belong to any of the users
+      prior_sequence: ""
+      prior_context: []
+    expected_output:
+      sequence:
+        - |-
+          users = monday_com_User__2_0_0__retrievewithwhere_User()
+          for user in users:
+            folders = Box_Folder__3_0_0__retrievewithwhere_Folder()
+            for folder in folders:
+              del_folder = Box_Folder__3_0_0__deletewithwhere_Folder()
+      bpmn:
+        $ref: "output/uid_101_output.bpmn"

@@ -1,0 +1,2186 @@
+[
+    {
+        "id": "AWS_Lambda_function__2_0_0__retrievewithwhere_function",
+        "description": "Retrieve all the programs or scripts, called \"functions\", in AWS Lambda"
+    },
+    {
+        "id": "AWS_Lambda_function__2_0_0__INVOKEFUNCTION_function",
+        "description": "Invokes a function"
+    },
+    {
+        "id": "Amazon_S3_bucket__2_0_0__retrievewithwhere_bucket",
+        "description": "Retrieve all the buckets of an Amazon S3 account"
+    },
+    {
+        "id": "Amazon_S3_bucket__2_0_0__create_bucket",
+        "description": "Create a bucket in an Amazon S3 account"
+    },
+    {
+        "id": "Amazon_S3_object__2_0_0__upsertwithwhere_object",
+        "description": "Update or create an object in an Amazon S3 bucket"
+    },
+    {
+        "id": "Amazon_S3_object__2_0_0__retrievewithwhere_object",
+        "description": "Retrieve all the objects by key from an Amazon S3 bucket"
+    },
+    {
+        "id": "Amazon_S3_object__2_0_0__create_object",
+        "description": "Create an object in an Amazon S3 bucket using multipart"
+    },
+    {
+        "id": "Amazon_S3_object__2_0_0__deletewithwhere_object",
+        "description": "Delete an object from an Amazon S3 bucket"
+    },
+    {
+        "id": "Amazon_S3_object__2_0_0__DOWNLOAD_OBJECT_object",
+        "description": "Download an object from an Amazon S3 bucket"
+    },
+    {
+        "id": "Amazon_S3_object__2_0_0__COPY_OBJECT_object",
+        "description": "Copy an object from an Amazon S3 bucket"
+    },
+    {
+        "id": "Amazon_SNS_Subscription__3_0_0__create_Subscription",
+        "description": "Create a subscription in Amazon SNS"
+    },
+    {
+        "id": "Amazon_SNS_Subscription__3_0_0__retrievewithwhere_Subscription",
+        "description": "Retrieve all the subscriptions from Amazon SNS"
+    },
+    {
+        "id": "Amazon_SNS_Subscription__3_0_0__deletewithwhere_Subscription",
+        "description": "Delete a subscription from Amazon SNS"
+    },
+    {
+        "id": "Amazon_SNS_Subscription__3_0_0__updatewithwhere_Subscription",
+        "description": "Update a subscription in Amazon SNS"
+    },
+    {
+        "id": "Amazon_SNS_Topic__3_0_0__retrievewithwhere_Topic",
+        "description": "Retrieve all the topics from Amazon SNS"
+    },
+    {
+        "id": "Amazon_SNS_Topic__3_0_0__create_Topic",
+        "description": "Create a topic to which notifications can be published in Amazon SNS"
+    },
+    {
+        "id": "Amazon_SNS_Topic__3_0_0__deletewithwhere_Topic",
+        "description": "Delete a topic and all its subscriptions from Amazon SNS"
+    },
+    {
+        "id": "Amazon_SNS_Topic__3_0_0__updatewithwhere_Topic",
+        "description": "Update a topic in Amazon SNS"
+    },
+    {
+        "id": "Amazon_SNS_Topic__3_0_0__PUBLISHMESSAGEONTOPIC_Topic",
+        "description": "Send a message to an Amazon SNS topic or send a text message (SMS message) directly to a phone number"
+    },
+    {
+        "id": "Amazon_SQS_Messages__3_0_0__PUTMESSAGE_Messages",
+        "description": "Put message on queue in Amazon SQS"
+    },
+    {
+        "id": "Amazon_SQS_PurgeQueue__3_0_0__PURGEQUEUE_PurgeQueue",
+        "description": "Purge a queue from Amazon SQS"
+    },
+    {
+        "id": "Amazon_SQS_Queue__3_0_0__retrievewithwhere_Queue",
+        "description": "Retrieve all queues from Amazon SQS"
+    },
+    {
+        "id": "Amazon_SQS_Queue__3_0_0__create_Queue",
+        "description": "Create a queue in Amazon SQS"
+    },
+    {
+        "id": "Amazon_SQS_Queue__3_0_0__deletewithwhere_Queue",
+        "description": "Delete a queue from Amazon SQS"
+    },
+    {
+        "id": "Amazon_SQS_Queue__3_0_0__updatewithwhere_Queue",
+        "description": "Amazon_SQS_Queue__3_0_0__updatewithwhere_Queue"
+    },
+    {
+        "id": "Anaplan_action__2_0_0__retrievewithwhere_action",
+        "description": "Retrieve all the actions from Anaplan"
+    },
+    {
+        "id": "Anaplan_actionTask__2_0_0__retrievewithwhere_actionTask",
+        "description": "Retrieve all the action tasks from Anaplan"
+    },
+    {
+        "id": "Anaplan_dimension__2_0_0__retrievewithwhere_dimension",
+        "description": "Retrieve all the unique identifiers of the dimensions that define a line item"
+    },
+    {
+        "id": "Anaplan_file__2_0_0__retrievewithwhere_file",
+        "description": "Retrieve information about the the files"
+    },
+    {
+        "id": "Anaplan_file__2_0_0__create_file",
+        "description": "Anaplan_file__2_0_0__create_file"
+    },
+    {
+        "id": "Anaplan_file__2_0_0__DOWNLOADFILECONTENT_file",
+        "description": "Anaplan_file__2_0_0__DOWNLOADFILECONTENT_file"
+    },
+    {
+        "id": "Anaplan_lineItem__2_0_0__retrievewithwhere_lineItem",
+        "description": "Retrieves the identifiers of line items for a specific module"
+    },
+    {
+        "id": "Anaplan_list__2_0_0__retrievewithwhere_list",
+        "description": "Retrieve the lists from Anaplan"
+    },
+    {
+        "id": "Anaplan_listItem__2_0_0__retrievewithwhere_listItem",
+        "description": "Retrieve all list items from Anaplan"
+    },
+    {
+        "id": "Anaplan_model__2_0_0__retrievewithwhere_model",
+        "description": "Retrieve information about the models in the tenant of the default user"
+    },
+    {
+        "id": "Anaplan_modelVersion__2_0_0__RETRIEVEVERSIONMETADATA_modelVersion",
+        "description": "Retrieve information about the model versions"
+    },
+    {
+        "id": "Anaplan_module__2_0_0__retrievewithwhere_module",
+        "description": "Retrieve all the modules from a specified model"
+    },
+    {
+        "id": "Anaplan_view__2_0_0__retrievewithwhere_view",
+        "description": "Retrieve the views from Anaplan"
+    },
+    {
+        "id": "Anaplan_workspace__2_0_0__retrievewithwhere_workspace",
+        "description": "Retrieve all the workspaces from a user's default tenant"
+    },
+    {
+        "id": "Asana_Attachments__2_0_0__retrievewithwhere_Attachments",
+        "description": "Get an attachment from an Asana task"
+    },
+    {
+        "id": "Asana_Attachments__2_0_0__create_Attachments",
+        "description": "Add an attachment to an Asana task"
+    },
+    {
+        "id": "Asana_Projects__2_0_0__retrievewithwhere_Projects",
+        "description": "Retrieve all projects from Asana"
+    },
+    {
+        "id": "Asana_Tasks__2_0_0__retrievewithwhere_Tasks",
+        "description": "Retrieve all tasks from Asana"
+    },
+    {
+        "id": "Asana_Tasks__2_0_0__create_Tasks",
+        "description": "Create a task in an Asana project"
+    },
+    {
+        "id": "Asana_Teams__2_0_0__retrievewithwhere_Teams",
+        "description": "Retrieve all teams from Asana by using their ID"
+    },
+    {
+        "id": "Asana_Users__2_0_0__retrievewithwhere_Users",
+        "description": "Retrieve all users from Asana by using their ID"
+    },
+    {
+        "id": "Asana_Workspaces__2_0_0__retrievewithwhere_Workspaces",
+        "description": "Retrieve all workspaces from Asana"
+    },
+    {
+        "id": "Microsoft_Entra_ID_AdministrativeUnits__4_0_0__retrievewithwhere_AdministrativeUnits",
+        "description": "Retrieve all the administrative units from Azure AD"
+    },
+    {
+        "id": "Microsoft_Entra_ID_AdministrativeUnitsGroups__4_0_0__retrievewithwhere_AdministrativeUnitsGroups",
+        "description": "Retrieve all the groups from an administrative unit"
+    },
+    {
+        "id": "Microsoft_Entra_ID_AdministrativeUnitsUsers__4_0_0__retrievewithwhere_AdministrativeUnitsUsers",
+        "description": "Retrieve all the users from an administrative unit"
+    },
+    {
+        "id": "Microsoft_Entra_ID_Devices__4_0_0__retrievewithwhere_Devices",
+        "description": "Retrieve all the devices from Azure AD"
+    },
+    {
+        "id": "Microsoft_Entra_ID_Domains__4_0_0__retrievewithwhere_Domains",
+        "description": "Retrieve all the domains from Azure AD"
+    },
+    {
+        "id": "Microsoft_Entra_ID_Domains__4_0_0__create_Domains",
+        "description": "Create a domain in Azure AD"
+    },
+    {
+        "id": "Microsoft_Entra_ID_GroupMemberGroups__4_0_0__retrievewithwhere_GroupMemberGroups",
+        "description": "Retrieve all the members from a group"
+    },
+    {
+        "id": "Microsoft_Entra_ID_GroupMemberUsers__4_0_0__retrievewithwhere_GroupMemberUsers",
+        "description": "Retrieve all the user members from a group"
+    },
+    {
+        "id": "Microsoft_Entra_ID_Groups__4_0_0__retrievewithwhere_Groups",
+        "description": "Retrieve all the groups from Azure AD"
+    },
+    {
+        "id": "Microsoft_Entra_ID_Organization__4_0_0__retrievewithwhere_Organization",
+        "description": "Retrieve all the organizations from Azure AD"
+    },
+    {
+        "id": "Microsoft_Entra_ID_Users__4_0_0__retrievewithwhere_Users",
+        "description": "Retrieve all the users from Azure AD"
+    },
+    {
+        "id": "Microsoft_Entra_ID_Users__4_0_0__create_Users",
+        "description": "Create a user in Azure AD"
+    },
+    {
+        "id": "bambooHR_benefits__2_0_0__retrievewithwhere_benefits",
+        "description": "Retrieve all the benefit deduction types"
+    },
+    {
+        "id": "bambooHR_dependents__2_0_0__retrievewithwhere_dependents",
+        "description": "Retrieves all the employee dependents from bambooHR"
+    },
+    {
+        "id": "bambooHR_dependents__2_0_0__create_dependents",
+        "description": "Create an employee dependent in bambooHR"
+    },
+    {
+        "id": "bambooHR_dependents__2_0_0__updatewithwhere_dependents",
+        "description": "Allows you to change the information for a given dependent ID"
+    },
+    {
+        "id": "bambooHR_employees__2_0_0__retrievewithwhere_employees",
+        "description": "Retrieve all the employees from bambooHR"
+    },
+    {
+        "id": "bambooHR_employees__2_0_0__create_employees",
+        "description": "Create an employee in bambooHR"
+    },
+    {
+        "id": "bambooHR_timetracking__2_0_0__retrievewithwhere_timetracking",
+        "description": "Retrieve time tracking records by using time tracking ID"
+    },
+    {
+        "id": "bambooHR_timetracking__2_0_0__create_timetracking",
+        "description": "Create a time tracking record in bambooHR"
+    },
+    {
+        "id": "Box_File__3_0_0__create_File",
+        "description": "Create a file in a specified folder in your Box account"
+    },
+    {
+        "id": "Box_File__3_0_0__updatewithwhere_File",
+        "description": "Update the contents for a specific file"
+    },
+    {
+        "id": "Box_File__3_0_0__retrievewithwhere_File",
+        "description": "Get information about files in your Box account"
+    },
+    {
+        "id": "Box_File__3_0_0__deletewithwhere_File",
+        "description": "Delete a file from your Box account"
+    },
+    {
+        "id": "Box_File__3_0_0__DOWNLOADFILE_File",
+        "description": "Download a file from your Box account"
+    },
+    {
+        "id": "Box_File__3_0_0__COPYFILE_File",
+        "description": "Create a copy of a file in another folder. The original version of the file will not be altered."
+    },
+    {
+        "id": "Box_Folder__3_0_0__retrievewithwhere_Folder",
+        "description": "Get information about folders"
+    },
+    {
+        "id": "Box_Folder__3_0_0__create_Folder",
+        "description": "Add a new folder in Box"
+    },
+    {
+        "id": "Box_Folder__3_0_0__deletewithwhere_Folder",
+        "description": "Delete a folder from a Box account"
+    },
+    {
+        "id": "Box_Folder__3_0_0__updatewithwhere_Folder",
+        "description": "Update the settings for a specific folder"
+    },
+    {
+        "id": "Box_Folder__3_0_0__COPYFOLDER_Folder",
+        "description": "Create copy of a folder in another folder"
+    },
+    {
+        "id": "Box_FolderItem__3_0_0__retrievewithwhere_FolderItem",
+        "description": "Get all folder items"
+    },
+    {
+        "id": "Box_SharedLink__3_0_0__retrievewithwhere_SharedLink",
+        "description": "Get information about shared links"
+    },
+    {
+        "id": "Calendly_event__1_0_0__retrievewithwhere_event",
+        "description": "Retrieve all events"
+    },
+    {
+        "id": "Calendly_eventInvitee__1_0_0__retrievewithwhere_eventInvitee",
+        "description": "Retrieve all event invitees"
+    },
+    {
+        "id": "Calendly_eventType__1_0_0__retrievewithwhere_eventType",
+        "description": "Retrieve all the event types"
+    },
+    {
+        "id": "Calendly_organizationInvitation__1_0_0__create_organizationInvitation",
+        "description": "Invite users to join an organization"
+    },
+    {
+        "id": "Calendly_schedulingLink__1_0_0__create_schedulingLink",
+        "description": "Create a single-use scheduling link to be shared"
+    },
+    {
+        "id": "Calendly_user__1_0_0__GETCURRENTUSER_user",
+        "description": "Retrieve information about your user account"
+    },
+    {
+        "id": "Coupa_expense_reports__4_0_0__retrievewithwhere_expense_reports",
+        "description": "Retrieve all expense reports from Coupa"
+    },
+    {
+        "id": "Coupa_expense_reports__4_0_0__create_expense_reports",
+        "description": "Create an expense report in Coupa"
+    },
+    {
+        "id": "Coupa_inventory_transactions__4_0_0__retrievewithwhere_inventory_transactions",
+        "description": "Retrieve all the inventory transactions from Coupa"
+    },
+    {
+        "id": "Coupa_invoices__4_0_0__retrievewithwhere_invoices",
+        "description": "Retrieve all invoices from Coupa"
+    },
+    {
+        "id": "Coupa_invoices__4_0_0__create_invoices",
+        "description": "Create an invoice in Coupa"
+    },
+    {
+        "id": "Coupa_order_lines__4_0_0__retrievewithwhere_order_lines",
+        "description": "Retrieve order_liness"
+    },
+    {
+        "id": "Coupa_purchase_orders__4_0_0__retrievewithwhere_purchase_orders",
+        "description": "Retrieve all purchase orders from Coupa"
+    },
+    {
+        "id": "Coupa_remit_to_addresses__4_0_0__retrievewithwhere_remit_to_addresses",
+        "description": "Retrieve remit-to addresses from Coupa"
+    },
+    {
+        "id": "Coupa_remit_to_addresses__4_0_0__create_remit_to_addresses",
+        "description": "Create a remit-to address in Coupa"
+    },
+    {
+        "id": "Coupa_suppliers__4_0_0__retrievewithwhere_suppliers",
+        "description": "Retrieve all suppliers from Coupa"
+    },
+    {
+        "id": "Coupa_suppliers__4_0_0__create_suppliers",
+        "description": "Create a supplier in Coupa"
+    },
+    {
+        "id": "Coupa_users__4_0_0__retrievewithwhere_users",
+        "description": "Retrieve all users from Coupa"
+    },
+    {
+        "id": "Coupa_users__4_0_0__create_users",
+        "description": "Create a user in Coupa"
+    },
+    {
+        "id": "Dropbox_files__3_0_0__retrievewithwhere_files",
+        "description": "Retrieve information about Dropbox files."
+    },
+    {
+        "id": "Dropbox_files__3_0_0__create_files",
+        "description": "Create a file in Dropbox"
+    },
+    {
+        "id": "Dropbox_files__3_0_0__DOWNLOADFILE_files",
+        "description": "Download the content of a file."
+    },
+    {
+        "id": "Dropbox_folders__3_0_0__retrievewithwhere_folders",
+        "description": "Retrieve all details about a folder for a specified path in Dropbox"
+    },
+    {
+        "id": "GitHub_Branch__3_0_0__retrievewithwhere_Branch",
+        "description": "Retrieve all the branches in GitHub"
+    },
+    {
+        "id": "GitHub_Comment__3_0_0__retrievewithwhere_Comment",
+        "description": "Retrieve all the comments from GitHub"
+    },
+    {
+        "id": "GitHub_Comment__3_0_0__create_Comment",
+        "description": "Create a comment in GitHub"
+    },
+    {
+        "id": "GitHub_Issue__3_0_0__retrievewithwhere_Issue",
+        "description": "Retrieve all the issues in GitHub"
+    },
+    {
+        "id": "GitHub_Issue__3_0_0__create_Issue",
+        "description": "Create a issue in GitHub"
+    },
+    {
+        "id": "GitHub_Organization__3_0_0__retrievewithwhere_Organization",
+        "description": "Retrieve all the organizations in GitHub"
+    },
+    {
+        "id": "GitHub_Organization__3_0_0__updatewithwhere_Organization",
+        "description": "Update a organization in GitHub"
+    },
+    {
+        "id": "GitHub_Pullrequest__3_0_0__retrievewithwhere_Pullrequest",
+        "description": "Retrieve all the pull requests in GitHub"
+    },
+    {
+        "id": "GitHub_Pullrequest__3_0_0__create_Pullrequest",
+        "description": "Create a pull request in GitHub"
+    },
+    {
+        "id": "GitHub_Repository__3_0_0__retrievewithwhere_Repository",
+        "description": "Retrieve all the repositories in GitHub"
+    },
+    {
+        "id": "GitHub_Repository__3_0_0__create_Repository",
+        "description": "Create a repository in GitHub"
+    },
+    {
+        "id": "GitLab_Branch__5_0_0__retrievewithwhere_Branch",
+        "description": "Retrieve all branches from GitLab"
+    },
+    {
+        "id": "GitLab_Branch__5_0_0__create_Branch",
+        "description": "Create a branch in GitLab"
+    },
+    {
+        "id": "GitLab_Commit__5_0_0__retrievewithwhere_Commit",
+        "description": "Retrieve all commits from GitLab"
+    },
+    {
+        "id": "GitLab_Epic__5_0_0__retrievewithwhere_Epic",
+        "description": "Retrieve all epics from GitLab"
+    },
+    {
+        "id": "GitLab_Epic__5_0_0__create_Epic",
+        "description": "Create an epic in GitLab"
+    },
+    {
+        "id": "GitLab_Epic__5_0_0__deletewithwhere_Epic",
+        "description": "Delete an epic from GitLab"
+    },
+    {
+        "id": "GitLab_Epic__5_0_0__updatewithwhere_Epic",
+        "description": "Update an epic in GitLab"
+    },
+    {
+        "id": "GitLab_Group__5_0_0__retrievewithwhere_Group",
+        "description": "Retrieve all groups from GitLab"
+    },
+    {
+        "id": "GitLab_Issue__5_0_0__create_Issue",
+        "description": "Create an issue in GitLab"
+    },
+    {
+        "id": "GitLab_Issue__5_0_0__retrievewithwhere_Issue",
+        "description": "Retrieve all issues from GitLab"
+    },
+    {
+        "id": "GitLab_IssueNote__5_0_0__retrievewithwhere_IssueNote",
+        "description": "Retrieve all the issue notes on a project"
+    },
+    {
+        "id": "GitLab_IssueNote__5_0_0__create_IssueNote",
+        "description": "Create an note for one project in GitLab"
+    },
+    {
+        "id": "GitLab_Label__5_0_0__retrievewithwhere_Label",
+        "description": "GitLab_Label__5_0_0__retrievewithwhere_Label"
+    },
+    {
+        "id": "GitLab_Label__5_0_0__create_Label",
+        "description": "GitLab_Label__5_0_0__create_Label"
+    },
+    {
+        "id": "GitLab_MergeRequest__5_0_0__retrievewithwhere_MergeRequest",
+        "description": "Retrieve all merge requests from GitLab"
+    },
+    {
+        "id": "GitLab_MergeRequest__5_0_0__create_MergeRequest",
+        "description": "Create a merge request in GitLab"
+    },
+    {
+        "id": "GitLab_MergeRequestNote__5_0_0__retrievewithwhere_MergeRequestNote",
+        "description": "Retrieves a list of all the notes in a merge request"
+    },
+    {
+        "id": "GitLab_MergeRequestNote__5_0_0__create_MergeRequestNote",
+        "description": "Creates a new note for a single merge request"
+    },
+    {
+        "id": "GitLab_Namespace__5_0_0__retrievewithwhere_Namespace",
+        "description": "Retrieve all namespaces from GitLab"
+    },
+    {
+        "id": "GitLab_Pipeline__5_0_0__retrievewithwhere_Pipeline",
+        "description": "Retrieve all pipelines from GitLab"
+    },
+    {
+        "id": "GitLab_Pipeline__5_0_0__create_Pipeline",
+        "description": "Create a pipeline in GitLab"
+    },
+    {
+        "id": "GitLab_Pipeline__5_0_0__deletewithwhere_Pipeline",
+        "description": "Delete a pipeline from GitLab"
+    },
+    {
+        "id": "GitLab_Project__5_0_0__retrievewithwhere_Project",
+        "description": "Retrieve all projects across GitLab for the authenticated user"
+    },
+    {
+        "id": "GitLab_Project__5_0_0__create_Project",
+        "description": "Create a project in GitLab"
+    },
+    {
+        "id": "GitLab_Project__5_0_0__deletewithwhere_Project",
+        "description": "Delete a project from GitLab"
+    },
+    {
+        "id": "GitLab_Project__5_0_0__SHAREPROJECTWITHGROUP_Project",
+        "description": "GitLab_Project__5_0_0__SHAREPROJECTWITHGROUP_Project"
+    },
+    {
+        "id": "GitLab_Release__5_0_0__create_Release",
+        "description": "Create a release in GitLab"
+    },
+    {
+        "id": "GitLab_Release__5_0_0__deletewithwhere_Release",
+        "description": "Delete a release in GitLab"
+    },
+    {
+        "id": "GitLab_Release__5_0_0__retrievewithwhere_Release",
+        "description": "Retrieve all releases in GitLab"
+    },
+    {
+        "id": "GitLab_Tag__5_0_0__retrievewithwhere_Tag",
+        "description": "Retrieve all tags from GitLab"
+    },
+    {
+        "id": "GitLab_Tag__5_0_0__create_Tag",
+        "description": "Create a tag in GitLab"
+    },
+    {
+        "id": "GitLab_Tag__5_0_0__deletewithwhere_Tag",
+        "description": "Delete a tag from GitLab"
+    },
+    {
+        "id": "GitLab_User__5_0_0__retrievewithwhere_User",
+        "description": "Retrieve all users from GitLab"
+    },
+    {
+        "id": "Gmail_mail__2_0_0__create_mail",
+        "description": "Send an email message from Gmail."
+    },
+    {
+        "id": "Google_Cloud_Storage_Bucket__4_0_0__retrievewithwhere_Bucket",
+        "description": "Retrieve all Google Cloud Storage buckets"
+    },
+    {
+        "id": "Google_Cloud_Storage_Bucket__4_0_0__create_Bucket",
+        "description": "Create a Google Cloud Storage bucket"
+    },
+    {
+        "id": "Google_Cloud_Storage_Bucket__4_0_0__deletewithwhere_Bucket",
+        "description": "Delete a Google Cloud Storage bucket"
+    },
+    {
+        "id": "Google_Cloud_Storage_Object__4_0_0__retrievewithwhere_Object",
+        "description": "Retrieve all objects from Google Cloud Storage"
+    },
+    {
+        "id": "Google_Cloud_Storage_Object__4_0_0__deletewithwhere_Object",
+        "description": "Delete an object from Google Cloud Storage"
+    },
+    {
+        "id": "Google_Cloud_Storage_Object__4_0_0__upsertwithwhere_Object",
+        "description": "If the object you want isn't found, you can create one"
+    },
+    {
+        "id": "IBM_Cloud_Object_Storage_S3_bucket__4_0_0__retrievewithwhere_bucket",
+        "description": "Retrieve all the buckets from an IBM Cloud Object Storage S3 account"
+    },
+    {
+        "id": "IBM_Cloud_Object_Storage_S3_bucket__4_0_0__create_bucket",
+        "description": "Create a bucket in an IBM Cloud Object Storage S3 account"
+    },
+    {
+        "id": "IBM_Cloud_Object_Storage_S3_bucketAcl__4_0_0__CREATE_STANDARD_ACL_FOR_BUCKET_bucketAcl",
+        "description": "Set the access permission for a bucket to apply to all users"
+    },
+    {
+        "id": "IBM_Cloud_Object_Storage_S3_object__4_0_0__retrievewithwhere_object",
+        "description": "Retrieve all objects from an IBM Cloud Object Storage S3 account"
+    },
+    {
+        "id": "IBM_Cloud_Object_Storage_S3_object__4_0_0__create_object",
+        "description": "Create an object in an IBM Cloud Object Storage S3 bucket"
+    },
+    {
+        "id": "IBM_Cloud_Object_Storage_S3_object__4_0_0__deletewithwhere_object",
+        "description": "Delete an object from an IBM Cloud Object Storage S3 bucket"
+    },
+    {
+        "id": "IBM_Cloud_Object_Storage_S3_object__4_0_0__updatewithwhere_object",
+        "description": "Update an object in an IBM Cloud Object Storage S3 bucket"
+    },
+    {
+        "id": "IBM_Cloud_Object_Storage_S3_object__4_0_0__DOWNLOAD_OBJECT_object",
+        "description": "Download an object from an IBM Cloud Object Storage S3 bucket"
+    },
+    {
+        "id": "IBM_Cloud_Object_Storage_S3_objectAcl__4_0_0__CREATE_STANDARD_ACL_FOR_OBJECT_objectAcl",
+        "description": "Set the access permission for an object to apply to all users"
+    },
+    {
+        "id": "Jira_Issue__2_0_0__retrievewithwhere_Issue",
+        "description": "Retrieve all Jira issues"
+    },
+    {
+        "id": "Jira_Issue__2_0_0__create_Issue",
+        "description": "Create operation for jira Issue"
+    },
+    {
+        "id": "Jira_Project__2_0_0__retrievewithwhere_Project",
+        "description": "Retrieve Projects"
+    },
+    {
+        "id": "Jira_Status__2_0_0__retrievewithwhere_Status",
+        "description": "Retrieve the statuses of multiple Jira issues"
+    },
+    {
+        "id": "Marketo_campaigns__3_0_0__retrievewithwhere_campaigns",
+        "description": "Retrieve all campaigns from Marketo"
+    },
+    {
+        "id": "Marketo_leads__3_0_0__retrievewithwhere_leads",
+        "description": "Retrieve all leads from Marketo"
+    },
+    {
+        "id": "Marketo_leads__3_0_0__create_leads",
+        "description": "Create a lead in Marketo"
+    },
+    {
+        "id": "Marketo_leads__3_0_0__updatewithwhere_leads",
+        "description": "Update a lead in Marketo"
+    },
+    {
+        "id": "Marketo_leads__3_0_0__ADDLEADTOLIST_leads",
+        "description": "Add an existing lead to a list in Marketo"
+    },
+    {
+        "id": "Marketo_lists__3_0_0__retrievewithwhere_lists",
+        "description": "Retrieve all lists from Marketo"
+    },
+    {
+        "id": "Marketo_opportunities__3_0_0__retrievewithwhere_opportunities",
+        "description": "Retrieve all opportunities from Marketo"
+    },
+    {
+        "id": "Marketo_opportunities__3_0_0__create_opportunities",
+        "description": "Create an opportunity in Marketo"
+    },
+    {
+        "id": "Marketo_opportunities__3_0_0__deletewithwhere_opportunities",
+        "description": "Delete an opportunity from Marketo"
+    },
+    {
+        "id": "Marketo_opportunities__3_0_0__updatewithwhere_opportunities",
+        "description": "Update an opportunity in Marketo"
+    },
+    {
+        "id": "monday_com_Board__2_0_0__retrievewithwhere_Board",
+        "description": "Retrieve all the boards from Monday.com"
+    },
+    {
+        "id": "monday_com_Board__2_0_0__create_Board",
+        "description": "Create a board in Monday.com"
+    },
+    {
+        "id": "monday_com_Group__2_0_0__retrievewithwhere_Group",
+        "description": "Retrieve all the groups from Monday.com"
+    },
+    {
+        "id": "monday_com_Item__2_0_0__retrievewithwhere_Item",
+        "description": "Retrieve all the items from Monday.com"
+    },
+    {
+        "id": "monday_com_Item__2_0_0__create_Item",
+        "description": "Create an item in Monday.com"
+    },
+    {
+        "id": "monday_com_ItemFile__2_0_0__retrievewithwhere_ItemFile",
+        "description": "Retrieve all item files from Monday.com"
+    },
+    {
+        "id": "monday_com_ItemUpdateFile__2_0_0__ADD_FILE_TO_UPDATE_ItemUpdateFile",
+        "description": "Add a file to an existing update in Monday.com"
+    },
+    {
+        "id": "monday_com_Update__2_0_0__retrievewithwhere_Update",
+        "description": "Retrieve all item updates from Monday.com"
+    },
+    {
+        "id": "monday_com_Update__2_0_0__create_Update",
+        "description": "Create an item update in Monday.com"
+    },
+    {
+        "id": "monday_com_User__2_0_0__retrievewithwhere_User",
+        "description": "Retrieve all the users from Monday.com"
+    },
+    {
+        "id": "Microsoft_Dynamics_365_for_Sales_Account__7_0_0__retrievewithwhere_Account",
+        "description": "Retrieve all accounts from Microsoft Dynamics 365 for Sales"
+    },
+    {
+        "id": "Microsoft_Dynamics_365_for_Sales_Account__7_0_0__create_Account",
+        "description": "Create an account in Microsoft Dynamics 365 for Sales"
+    },
+    {
+        "id": "Microsoft_Dynamics_365_for_Sales_Account__7_0_0__updatewithwhere_Account",
+        "description": "Update an account in Microsoft Dynamics 365 for Sales"
+    },
+    {
+        "id": "Microsoft_Dynamics_365_for_Sales_Contact__7_0_0__retrievewithwhere_Contact",
+        "description": "Retrieve all contacts from Microsoft Dynamics 365 for Sales"
+    },
+    {
+        "id": "Microsoft_Dynamics_365_for_Sales_Contact__7_0_0__create_Contact",
+        "description": "Create a contact in Microsoft Dynamics 365 for Sales"
+    },
+    {
+        "id": "Microsoft_Dynamics_365_for_Sales_Contact__7_0_0__updatewithwhere_Contact",
+        "description": "Update a contact in Microsoft Dynamics 365 for Sales"
+    },
+    {
+        "id": "Microsoft_Dynamics_365_for_Sales_Incident__7_0_0__retrievewithwhere_Incident",
+        "description": "Retrieve all cases from MS Dynamics CRM REST"
+    },
+    {
+        "id": "Microsoft_Dynamics_365_for_Sales_Incident__7_0_0__create_Incident",
+        "description": "Create a case in MS Dynamics CRM REST"
+    },
+    {
+        "id": "Microsoft_Dynamics_365_for_Sales_Incident__7_0_0__deletewithwhere_Incident",
+        "description": "Delete a case from MS Dynamics CRM REST"
+    },
+    {
+        "id": "Microsoft_Dynamics_365_for_Sales_Incident__7_0_0__updatewithwhere_Incident",
+        "description": "Update a case in MS Dynamics CRM REST"
+    },
+    {
+        "id": "Microsoft_Dynamics_365_for_Sales_Invoice__7_0_0__retrievewithwhere_Invoice",
+        "description": "Retrieve all invoices from Microsoft Dynamics 365 for Sales"
+    },
+    {
+        "id": "Microsoft_Dynamics_365_for_Sales_Invoice__7_0_0__create_Invoice",
+        "description": "Create an invoice in Microsoft Dynamics 365 for Sales"
+    },
+    {
+        "id": "Microsoft_Dynamics_365_for_Sales_Invoice__7_0_0__updatewithwhere_Invoice",
+        "description": "Update an invoice in Microsoft Dynamics 365 for Sales"
+    },
+    {
+        "id": "Microsoft_Dynamics_365_for_Sales_Lead__7_0_0__retrievewithwhere_Lead",
+        "description": "Retrieve all leads from Microsoft Dynamics 365 for Sales"
+    },
+    {
+        "id": "Microsoft_Dynamics_365_for_Sales_Lead__7_0_0__create_Lead",
+        "description": "Create a lead in Microsoft Dynamics 365 for Sales"
+    },
+    {
+        "id": "Microsoft_Dynamics_365_for_Sales_Lead__7_0_0__updatewithwhere_Lead",
+        "description": "Update a lead in Microsoft Dynamics 365 for Sales"
+    },
+    {
+        "id": "Microsoft_Dynamics_365_for_Sales_msdyn_caseenrichment__7_0_0__retrievewithwhere_msdyn_caseenrichment",
+        "description": "Retrieve all case enrichments from MS Dynamics CRM REST"
+    },
+    {
+        "id": "Microsoft_Dynamics_365_for_Sales_msdyn_caseenrichment__7_0_0__create_msdyn_caseenrichment",
+        "description": "Create a case enrichment in MS Dynamics CRM REST"
+    },
+    {
+        "id": "Microsoft_Dynamics_365_for_Sales_msdyn_caseenrichment__7_0_0__deletewithwhere_msdyn_caseenrichment",
+        "description": "Delete a case enrichment from MS Dynamics CRM REST"
+    },
+    {
+        "id": "Microsoft_Dynamics_365_for_Sales_msdyn_caseenrichment__7_0_0__updatewithwhere_msdyn_caseenrichment",
+        "description": "Update a case enrichment in MS Dynamics CRM REST"
+    },
+    {
+        "id": "Microsoft_Dynamics_365_for_Sales_msdyn_casetopicsummary__7_0_0__retrievewithwhere_msdyn_casetopicsummary",
+        "description": "Retrieve all case topic summaries from MS Dynamics CRM REST"
+    },
+    {
+        "id": "Microsoft_Dynamics_365_for_Sales_msdyn_casetopicsummary__7_0_0__create_msdyn_casetopicsummary",
+        "description": "Create a case topic summary in MS Dynamics CRM REST"
+    },
+    {
+        "id": "Microsoft_Dynamics_365_for_Sales_msdyn_casetopicsummary__7_0_0__deletewithwhere_msdyn_casetopicsummary",
+        "description": "Delete a case topic summary from MS Dynamics CRM REST"
+    },
+    {
+        "id": "Microsoft_Dynamics_365_for_Sales_msdyn_casetopicsummary__7_0_0__updatewithwhere_msdyn_casetopicsummary",
+        "description": "Update case topic summary in MS Dynamics CRM REST"
+    },
+    {
+        "id": "Microsoft_Dynamics_365_for_Sales_msdyn_ConversationTag__7_0_0__retrievewithwhere_msdyn_ConversationTag",
+        "description": "Retrieve all conversation tags from MS Dynamics CRM REST"
+    },
+    {
+        "id": "Microsoft_Dynamics_365_for_Sales_msdyn_ConversationTag__7_0_0__create_msdyn_ConversationTag",
+        "description": "Create a conversation tag in MS Dynamics CRM REST"
+    },
+    {
+        "id": "Microsoft_Dynamics_365_for_Sales_msdyn_ConversationTag__7_0_0__deletewithwhere_msdyn_ConversationTag",
+        "description": "Delete a conversation tag from MS Dynamics CRM REST"
+    },
+    {
+        "id": "Microsoft_Dynamics_365_for_Sales_msdyn_ConversationTag__7_0_0__updatewithwhere_msdyn_ConversationTag",
+        "description": "Update a conversation tag in MS Dynamics CRM REST"
+    },
+    {
+        "id": "Microsoft_Dynamics_365_for_Sales_msdyn_octag__7_0_0__retrievewithwhere_msdyn_octag",
+        "description": "Retrieve all tags from MS Dynamics CRM REST"
+    },
+    {
+        "id": "Microsoft_Dynamics_365_for_Sales_msdyn_octag__7_0_0__create_msdyn_octag",
+        "description": "Create a tag in MS Dynamics CRM REST"
+    },
+    {
+        "id": "Microsoft_Dynamics_365_for_Sales_msdyn_octag__7_0_0__deletewithwhere_msdyn_octag",
+        "description": "Delete a tag from MS Dynamics CRM REST"
+    },
+    {
+        "id": "Microsoft_Dynamics_365_for_Sales_msdyn_octag__7_0_0__updatewithwhere_msdyn_octag",
+        "description": "Update a tag in MS Dynamics CRM REST"
+    },
+    {
+        "id": "Microsoft_Dynamics_365_for_Sales_msdyn_salestag__7_0_0__retrievewithwhere_msdyn_salestag",
+        "description": "Retrieve all sales tags from MS Dynamics CRM REST"
+    },
+    {
+        "id": "Microsoft_Dynamics_365_for_Sales_msdyn_salestag__7_0_0__create_msdyn_salestag",
+        "description": "Create a sales tag in MS Dynamics CRM REST"
+    },
+    {
+        "id": "Microsoft_Dynamics_365_for_Sales_msdyn_salestag__7_0_0__deletewithwhere_msdyn_salestag",
+        "description": "Delete a sales tag from MS Dynamics CRM REST"
+    },
+    {
+        "id": "Microsoft_Dynamics_365_for_Sales_msdyn_salestag__7_0_0__updatewithwhere_msdyn_salestag",
+        "description": "Update a sales tag in MS Dynamics CRM REST"
+    },
+    {
+        "id": "Microsoft_Dynamics_365_for_Sales_PriceLevel__7_0_0__retrievewithwhere_PriceLevel",
+        "description": "Retrieve all price list from Microsoft Dynamics 365 for Sales"
+    },
+    {
+        "id": "Microsoft_Dynamics_365_for_Sales_Product__7_0_0__retrievewithwhere_Product",
+        "description": "Retrieve all products from MS Dynamics CRM REST"
+    },
+    {
+        "id": "Microsoft_Dynamics_365_for_Sales_Product__7_0_0__create_Product",
+        "description": "Create a product in Microsoft Dynamics CRM REST"
+    },
+    {
+        "id": "Microsoft_Dynamics_365_for_Sales_Product__7_0_0__deletewithwhere_Product",
+        "description": "Delete a product from Microsoft Dynamics CRM REST"
+    },
+    {
+        "id": "Microsoft_Dynamics_365_for_Sales_Product__7_0_0__updatewithwhere_Product",
+        "description": "Update a product in Microsoft Dynamics CRM REST"
+    },
+    {
+        "id": "Microsoft_Dynamics_365_for_Sales_Quote__7_0_0__retrievewithwhere_Quote",
+        "description": "Retrieve all quotes from MS Dynamics CRM REST"
+    },
+    {
+        "id": "Microsoft_Dynamics_365_for_Sales_Quote__7_0_0__create_Quote",
+        "description": "Create a quote in MS Dynamics CRM REST"
+    },
+    {
+        "id": "Microsoft_Dynamics_365_for_Sales_Quote__7_0_0__deletewithwhere_Quote",
+        "description": "Delete a quote from MS Dynamics CRM REST"
+    },
+    {
+        "id": "Microsoft_Dynamics_365_for_Sales_Quote__7_0_0__updatewithwhere_Quote",
+        "description": "Update a quote in MS Dynamics CRM REST"
+    },
+    {
+        "id": "Microsoft_Dynamics_365_for_Sales_SalesOrder__7_0_0__retrievewithwhere_SalesOrder",
+        "description": "Retrieve all orders from Microsoft Dynamics 365 for Sales"
+    },
+    {
+        "id": "Microsoft_Dynamics_365_for_Sales_SalesOrder__7_0_0__create_SalesOrder",
+        "description": "Create an order in Microsoft Dynamics 365 for Sales"
+    },
+    {
+        "id": "Microsoft_Dynamics_365_for_Sales_SalesOrder__7_0_0__updatewithwhere_SalesOrder",
+        "description": "Update an order in Microsoft Dynamics 365 for Sales"
+    },
+    {
+        "id": "Microsoft_Dynamics_365_for_Sales_Task__7_0_0__retrievewithwhere_Task",
+        "description": "Retrieve all tasks from MS Dynamics CRM REST"
+    },
+    {
+        "id": "Microsoft_Dynamics_365_for_Sales_Task__7_0_0__create_Task",
+        "description": "Create a task in MS Dynamics CRM REST"
+    },
+    {
+        "id": "Microsoft_Dynamics_365_for_Sales_Task__7_0_0__deletewithwhere_Task",
+        "description": "Delete a task from MS Dynamics CRM REST"
+    },
+    {
+        "id": "Microsoft_Dynamics_365_for_Sales_Task__7_0_0__updatewithwhere_Task",
+        "description": "Update a task in MS Dynamics CRM REST"
+    },
+    {
+        "id": "Microsoft_Dynamics_365_for_Sales_UoM__7_0_0__retrievewithwhere_UoM",
+        "description": "Retrieve all units from MS Dynamics CRM REST"
+    },
+    {
+        "id": "Microsoft_Dynamics_365_for_Finance_and_Operations_Applicant__2_0_0__retrievewithwhere_Applicant",
+        "description": "Retrieve all the applicants from Microsoft Dynamics 365 for Finance and Operations"
+    },
+    {
+        "id": "Microsoft_Dynamics_365_for_Finance_and_Operations_Applicant__2_0_0__create_Applicant",
+        "description": "Create an applicant in Microsoft Dynamics 365 for Finance and Operations"
+    },
+    {
+        "id": "Microsoft_Dynamics_365_for_Finance_and_Operations_Applicant__2_0_0__deletewithwhere_Applicant",
+        "description": "Delete an applicant from Microsoft Dynamics 365 for Finance and Operations"
+    },
+    {
+        "id": "Microsoft_Dynamics_365_for_Finance_and_Operations_Applicant__2_0_0__updatewithwhere_Applicant",
+        "description": "Update an applicant in Microsoft Dynamics 365 for Finance and Operations"
+    },
+    {
+        "id": "Microsoft_Dynamics_365_for_Finance_and_Operations_Customer__2_0_0__retrievewithwhere_Customer",
+        "description": "Retrieve all the customers from Microsoft Dynamics 365 for Finance and Operations"
+    },
+    {
+        "id": "Microsoft_Dynamics_365_for_Finance_and_Operations_Customer__2_0_0__create_Customer",
+        "description": "Create a customer in Microsoft Dynamics 365 for Finance and Operations"
+    },
+    {
+        "id": "Microsoft_Dynamics_365_for_Finance_and_Operations_Customer__2_0_0__deletewithwhere_Customer",
+        "description": "Delete a customer from Microsoft Dynamics 365 for Finance and Operations"
+    },
+    {
+        "id": "Microsoft_Dynamics_365_for_Finance_and_Operations_Customer__2_0_0__updatewithwhere_Customer",
+        "description": "Update a customer in Microsoft Dynamics 365 for Finance and Operations"
+    },
+    {
+        "id": "Microsoft_Dynamics_365_for_Finance_and_Operations_CustomerGroup__2_0_0__retrievewithwhere_CustomerGroup",
+        "description": "Retrieve all the customer groups from Microsoft Dynamics 365 for Finance and Operations"
+    },
+    {
+        "id": "Microsoft_Dynamics_365_for_Finance_and_Operations_Employee__2_0_0__retrievewithwhere_Employee",
+        "description": "Retrieve all the employees from Microsoft Dynamics 365 for Finance and Operations"
+    },
+    {
+        "id": "Microsoft_Dynamics_365_for_Finance_and_Operations_Employee__2_0_0__create_Employee",
+        "description": "Create an employee in Microsoft Dynamics 365 for Finance and Operations"
+    },
+    {
+        "id": "Microsoft_Dynamics_365_for_Finance_and_Operations_Employee__2_0_0__deletewithwhere_Employee",
+        "description": "Delete an employee from Microsoft Dynamics 365 for Finance and Operations"
+    },
+    {
+        "id": "Microsoft_Dynamics_365_for_Finance_and_Operations_Employee__2_0_0__updatewithwhere_Employee",
+        "description": "Update an employee in Microsoft Dynamics 365 for Finance and Operations"
+    },
+    {
+        "id": "Microsoft_Dynamics_365_for_Finance_and_Operations_LegalEntity__2_0_0__retrievewithwhere_LegalEntity",
+        "description": "Retrieve all the legal entities from Microsoft Dynamics 365 for Finance and Operations"
+    },
+    {
+        "id": "Microsoft_Dynamics_365_for_Finance_and_Operations__2_0_0__retrievewithwhere_Operation",
+        "description": "Retrieve all the operations from Microsoft Dynamics 365 for Finance and Operations"
+    },
+    {
+        "id": "Microsoft_Dynamics_365_for_Finance_and_Operations__2_0_0__create_Operation",
+        "description": "Create an operation in Microsoft Dynamics 365 for Finance and Operations"
+    },
+    {
+        "id": "Microsoft_Dynamics_365_for_Finance_and_Operations__2_0_0__deletewithwhere_Operation",
+        "description": "Delete an operation from Microsoft Dynamics 365 for Finance and Operations"
+    },
+    {
+        "id": "Microsoft_Dynamics_365_for_Finance_and_Operations__2_0_0__updatewithwhere_Operation",
+        "description": "Update an operation in Microsoft Dynamics 365 for Finance and Operations"
+    },
+    {
+        "id": "Microsoft_Dynamics_365_for_Finance_and_Operations_Project__2_0_0__retrievewithwhere_Project",
+        "description": "Retrieve all the projects from Microsoft Dynamics 365 for Finance and Operations"
+    },
+    {
+        "id": "Microsoft_Dynamics_365_for_Finance_and_Operations_Project__2_0_0__create_Project",
+        "description": "Create a project in Microsoft Dynamics 365 for Finance and Operations"
+    },
+    {
+        "id": "Microsoft_Dynamics_365_for_Finance_and_Operations_Project__2_0_0__deletewithwhere_Project",
+        "description": "Delete a project from Microsoft Dynamics 365 for Finance and Operations"
+    },
+    {
+        "id": "Microsoft_Dynamics_365_for_Finance_and_Operations_Project__2_0_0__updatewithwhere_Project",
+        "description": "Update  a project in Microsoft Dynamics 365 for Finance and Operations"
+    },
+    {
+        "id": "Microsoft_Dynamics_365_for_Finance_and_Operations_ProjectGroup__2_0_0__retrievewithwhere_ProjectGroup",
+        "description": "Retrieve all the project groups from Microsoft Dynamics 365 for Finance and Operations"
+    },
+    {
+        "id": "Microsoft_Dynamics_365_for_Finance_and_Operations_Prospect__2_0_0__retrievewithwhere_Prospect",
+        "description": "Retrieve all the prospects from Microsoft Dynamics 365 for Finance and Operations"
+    },
+    {
+        "id": "Microsoft_Dynamics_365_for_Finance_and_Operations_Prospect__2_0_0__create_Prospect",
+        "description": "Create a prospect in Microsoft Dynamics 365 for Finance and Operations"
+    },
+    {
+        "id": "Microsoft_Dynamics_365_for_Finance_and_Operations_SalesAgreement__2_0_0__retrievewithwhere_SalesAgreement",
+        "description": "Retrieve all the sales agreements from Microsoft Dynamics 365 for Finance and Operations"
+    },
+    {
+        "id": "Microsoft_Dynamics_365_for_Finance_and_Operations_SalesAgreement__2_0_0__create_SalesAgreement",
+        "description": "Create a sales agreement in Microsoft Dynamics 365 for Finance and Operations"
+    },
+    {
+        "id": "Microsoft_Exchange_CalendarGroups__2_0_0__retrievewithwhere_CalendarGroups",
+        "description": "Retrieve all calendar groups from Microsoft Exchange"
+    },
+    {
+        "id": "Microsoft_Exchange_Calendars__2_0_0__retrievewithwhere_Calendars",
+        "description": "Retrieve all calendars from Microsoft Exchange"
+    },
+    {
+        "id": "Microsoft_Exchange_Events__2_0_0__create_Events",
+        "description": "Create a calendar event in Microsoft Exchange"
+    },
+    {
+        "id": "Microsoft_Exchange_Events__2_0_0__deletewithwhere_Events",
+        "description": "Delete a calendar event from Microsoft Exchange"
+    },
+    {
+        "id": "Microsoft_Exchange_Events__2_0_0__updatewithwhere_Events",
+        "description": "Update a calendar event in Microsoft Exchange"
+    },
+    {
+        "id": "Microsoft_Exchange_MailFolders__2_0_0__retrievewithwhere_MailFolders",
+        "description": "Retrieve all mail folders from Microsoft Exchange"
+    },
+    {
+        "id": "Microsoft_OneDrive_for_Business_Drive__4_0_0__retrievewithwhere_Drive",
+        "description": "Get all drives from Microsoft OneDrive"
+    },
+    {
+        "id": "Microsoft_OneDrive_for_Business_Folder__4_0_0__retrievewithwhere_Folder",
+        "description": "Get all folders from Microsoft OneDrive"
+    },
+    {
+        "id": "Microsoft_OneDrive_for_Business_Folder__4_0_0__create_Folder",
+        "description": "Create a folder in Microsoft OneDrive"
+    },
+    {
+        "id": "Microsoft_OneDrive_for_Business_Folder__4_0_0__deletewithwhere_Folder",
+        "description": "Delete a folder from Microsoft OneDrive"
+    },
+    {
+        "id": "Microsoft_OneDrive_for_Business_Folder__4_0_0__MOVEFOLDER_Folder",
+        "description": "Move a folder in Microsoft OneDrive"
+    },
+    {
+        "id": "Microsoft_OneDrive_for_Business_Folder__4_0_0__COPYFOLDER_Folder",
+        "description": "Copy a folder in Microsoft OneDrive"
+    },
+    {
+        "id": "Microsoft_OneDrive_for_Business_Folder__4_0_0__RENAMEFOLDER_Folder",
+        "description": "Rename a folder in Microsoft OneDrive"
+    },
+    {
+        "id": "Microsoft_OneDrive_for_Business_FolderItem__4_0_0__retrievewithwhere_FolderItem",
+        "description": "Get all folder items from OneDrive"
+    },
+    {
+        "id": "Microsoft_OneNote_getUsersByIdOnenoteNotebooks_model__1_0_0__retrievewithwhere_getUsersByIdOnenoteNotebooks_model",
+        "description": "Retrieve all notebooks from Microsoft OneNote"
+    },
+    {
+        "id": "Microsoft_OneNote_getUsersByIdOnenoteSections_model__1_0_0__retrievewithwhere_getUsersByIdOnenoteSections_model",
+        "description": "Retrieve all sections from Microsoft OneNote pages"
+    },
+    {
+        "id": "Microsoft_OneNote_getUsersByUserIdOnenotePages_model__1_0_0__retrievewithwhere_getUsersByUserIdOnenotePages_model",
+        "description": "Retrieve all pages from Microsoft OneNote"
+    },
+    {
+        "id": "Microsoft_OneNote_getUsersByUserIdOnenotePagesByPageIdContent_model__1_0_0__getUsersByUserIdOnenotePagesByPageIdContent_getUsersByUserIdOnenotePagesByPageIdContent_model",
+        "description": "Download a page's content from Microsoft OneNote"
+    },
+    {
+        "id": "Microsoft_OneNote_patchUsersByUserIdOnenotePagesByPageIdContent_model__1_0_0__patchUsersByUserIdOnenotePagesByPageIdContent_patchUsersByUserIdOnenotePagesByPageIdContent_model",
+        "description": "Append a note in Microsoft OneNote page"
+    },
+    {
+        "id": "Microsoft_OneNote_postUsersByIdOnenoteNotebooks_model__1_0_0__postUsersByIdOnenoteNotebooks_postUsersByIdOnenoteNotebooks_model",
+        "description": "Create a notebook in Microsoft OneNote"
+    },
+    {
+        "id": "Microsoft_OneNote_postUsersByUseridOnenoteNotebooksByNotebookididSections_model__1_0_0__postUsersByUseridOnenoteNotebooksByNotebookididSections_postUsersByUseridOnenoteNotebooksByNotebookididSections_model",
+        "description": "Creates a section in Microsoft OneNote"
+    },
+    {
+        "id": "Microsoft_OneNote_postUsersByUserIdOnenoteSectionsBySectionIdPages_model__1_0_0__postUsersByUserIdOnenoteSectionsBySectionIdPages_postUsersByUserIdOnenoteSectionsBySectionIdPages_model",
+        "description": "Creates a page in Microsoft OneNote"
+    },
+    {
+        "id": "Microsoft_Exchange_Messages__2_0_0__SENDOUTLOOK_Messages",
+        "description": "Send an email using Outlook"
+    },
+    {
+        "id": "Microsoft_Power_BI_Dataflow__2_0_0__retrievewithwhere_Dataflow",
+        "description": "Retrieve all the dataflows from Microsoft Power BI"
+    },
+    {
+        "id": "Microsoft_Power_BI_Dataflowdatasources__2_0_0__retrievewithwhere_Dataflowdatasources",
+        "description": "Retrieve all the dataflow data sources from Microsoft Power BI"
+    },
+    {
+        "id": "Microsoft_Power_BI_Dataset__2_0_0__retrievewithwhere_Dataset",
+        "description": "Retrieve all the datasets from Microsoft Power BI"
+    },
+    {
+        "id": "Microsoft_Power_BI_Datasetdataflow__2_0_0__retrievewithwhere_Datasetdataflow",
+        "description": "Retrieve the dataset to dataflow links"
+    },
+    {
+        "id": "Microsoft_Power_BI_Datasetdatasources__2_0_0__retrievewithwhere_Datasetdatasources",
+        "description": "Retrieve all the dataset data sources from Microsoft Power BI"
+    },
+    {
+        "id": "Microsoft_Power_BI_Datasetgateway__2_0_0__retrievewithwhere_Datasetgateway",
+        "description": "Retrieve all the dataset gateways from Microsoft Power BI"
+    },
+    {
+        "id": "Microsoft_Power_BI_Datasetuseraccess__2_0_0__retrievewithwhere_Datasetuseraccess",
+        "description": "Retrieve the user access to the dataset from Microsoft Power BI"
+    },
+    {
+        "id": "Microsoft_Power_BI_Gateway__2_0_0__retrievewithwhere_Gateway",
+        "description": "Retrieve all the gateways"
+    },
+    {
+        "id": "Microsoft_Power_BI_Gatewaydatasource__2_0_0__retrievewithwhere_Gatewaydatasource",
+        "description": "Retrieve all data sources of a gateway from Microsoft Power BI"
+    },
+    {
+        "id": "Microsoft_Power_BI_Gatewaydatasourceuser__2_0_0__retrievewithwhere_Gatewaydatasourceuser",
+        "description": "Retrieve all the users from a gateway data source in Microsoft Power BI"
+    },
+    {
+        "id": "Microsoft_Power_BI_Goal__2_0_0__retrievewithwhere_Goal",
+        "description": "Retrieve all the goals from Microsoft Power BI"
+    },
+    {
+        "id": "Microsoft_Power_BI_Goal__2_0_0__create_Goal",
+        "description": "Create a goal in the Microsoft Power BI"
+    },
+    {
+        "id": "Microsoft_Power_BI_Goalvalues__2_0_0__retrievewithwhere_Goalvalues",
+        "description": "Retrieve all the goal values from Microsoft Power BI"
+    },
+    {
+        "id": "Microsoft_Power_BI_Goalvalues__2_0_0__create_Goalvalues",
+        "description": "Create a goal value in the Microsoft Power BI"
+    },
+    {
+        "id": "Microsoft_Power_BI_Pushdataset__2_0_0__retrievewithwhere_Pushdataset",
+        "description": "Retrieve all the push datasets from Microsoft Power BI"
+    },
+    {
+        "id": "Microsoft_Power_BI_Scorecard__2_0_0__retrievewithwhere_Scorecard",
+        "description": "Retrieve all the scorecards from Microsoft Power BI"
+    },
+    {
+        "id": "Microsoft_Power_BI_Table__2_0_0__retrievewithwhere_Table",
+        "description": "Retrieve all the tables from Microsoft Power BI"
+    },
+    {
+        "id": "Microsoft_Power_BI_Workspace__2_0_0__retrievewithwhere_Workspace",
+        "description": "Retrieve all the workspaces from Microsoft Power BI"
+    },
+    {
+        "id": "Microsoft_Power_BI_Workspace__2_0_0__create_Workspace",
+        "description": "Create a workspace in Microsoft Power BI"
+    },
+    {
+        "id": "Microsoft_Power_BI_Workspace__2_0_0__deletewithwhere_Workspace",
+        "description": "Delete a workspace from Microsoft Power BI"
+    },
+    {
+        "id": "Microsoft_Power_BI_Workspaceuser__2_0_0__retrievewithwhere_Workspaceuser",
+        "description": "Retrieve all the workspace users from Microsoft Power BI"
+    },
+    {
+        "id": "Microsoft_SharePoint_File__204_0_0__retrievewithwhere_File",
+        "description": "Retrieve all files from Sharepoint"
+    },
+    {
+        "id": "Microsoft_SharePoint_File__204_0_0__create_File",
+        "description": "Create a file in Sharepoint"
+    },
+    {
+        "id": "Microsoft_SharePoint_File__204_0_0__deletewithwhere_File",
+        "description": "Delete a file from Sharepoint"
+    },
+    {
+        "id": "Microsoft_SharePoint_File__204_0_0__updatewithwhere_File",
+        "description": "Update the content of a file"
+    },
+    {
+        "id": "Microsoft_SharePoint_File__204_0_0__DOWNLOADFILE_File",
+        "description": "Download a file from Sharepoint"
+    },
+    {
+        "id": "Microsoft_SharePoint_File__204_0_0__RENAMEFILE_File",
+        "description": "Rename a file in Sharepoint"
+    },
+    {
+        "id": "Microsoft_SharePoint_Folder__204_0_0__retrievewithwhere_Folder",
+        "description": "Retrieve all folders from Sharepoint"
+    },
+    {
+        "id": "Microsoft_SharePoint_Folder__204_0_0__create_Folder",
+        "description": "Create a folder in sharepoint"
+    },
+    {
+        "id": "Microsoft_SharePoint_Folder__204_0_0__deletewithwhere_Folder",
+        "description": "Delete a folder from Sharepoint"
+    },
+    {
+        "id": "Microsoft_SharePoint_Folder__204_0_0__updatewithwhere_Folder",
+        "description": "Update a folder in Sharepoint"
+    },
+    {
+        "id": "Microsoft_SharePoint_FolderItem__204_0_0__retrievewithwhere_FolderItem",
+        "description": "Retrieve all folder items from Sharepoint"
+    },
+    {
+        "id": "Microsoft_SharePoint_List__204_0_0__retrievewithwhere_List",
+        "description": "Retrieve all lists from Sharepoint"
+    },
+    {
+        "id": "Microsoft_SharePoint_List__204_0_0__create_List",
+        "description": "Create a list in Sharepoint"
+    },
+    {
+        "id": "Microsoft_SharePoint_ListItem__204_0_0__retrievewithwhere_ListItem",
+        "description": "Retrieve all list items from Sharepoint"
+    },
+    {
+        "id": "Microsoft_SharePoint_ListItem__204_0_0__create_ListItem",
+        "description": "Create a list item in Sharepoint"
+    },
+    {
+        "id": "Microsoft_SharePoint_ListItemAttachment__204_0_0__retrievewithwhere_ListItemAttachment",
+        "description": "Retrieve all list item attachments from Sharepoint"
+    },
+    {
+        "id": "Microsoft_SharePoint_ListItemAttachment__204_0_0__create_ListItemAttachment",
+        "description": "Create a list item attachment in Sharepoint"
+    },
+    {
+        "id": "Microsoft_SharePoint_ListItemAttachment__204_0_0__deletewithwhere_ListItemAttachment",
+        "description": "Delete a list item attachment from Sharepoint"
+    },
+    {
+        "id": "Microsoft_SharePoint_ListItemAttachment__204_0_0__updatewithwhere_ListItemAttachment",
+        "description": "Update the content of a list item attachment in Sharepoint"
+    },
+    {
+        "id": "Microsoft_SharePoint_ListItemAttachment__204_0_0__DOWNLOADLISTITEMATTACHMENT_ListItemAttachment",
+        "description": "Download a list item attachment from Sharepoint"
+    },
+    {
+        "id": "Microsoft_SharePoint_Site__204_0_0__updatewithwhere_Site",
+        "description": "Microsoft_SharePoint_Site__204_0_0__updatewithwhere_Site"
+    },
+    {
+        "id": "Microsoft_SharePoint_Site__204_0_0__retrievewithwhere_Site",
+        "description": "Retrieve all sites from Sharepoint"
+    },
+    {
+        "id": "Microsoft_SharePoint_Site__204_0_0__deletewithwhere_Site",
+        "description": "Delete a site from Sharepoint"
+    },
+    {
+        "id": "Microsoft_SharePoint_User__204_0_0__retrievewithwhere_User",
+        "description": "Get all users from Sharepoint"
+    },
+    {
+        "id": "Microsoft_Teams_Channel__2_0_0__retrievewithwhere_Channel",
+        "description": "Retrieve all the MS Teams channels in my organization"
+    },
+    {
+        "id": "Microsoft_Teams_Channel__2_0_0__create_Channel",
+        "description": "Create a channel for a team"
+    },
+    {
+        "id": "Microsoft_Teams_Channel__2_0_0__deletewithwhere_Channel",
+        "description": "Delete a channel"
+    },
+    {
+        "id": "Microsoft_Teams_Channel__2_0_0__updatewithwhere_Channel",
+        "description": "Update the settings of a channel"
+    },
+    {
+        "id": "Microsoft_Teams_Chat__2_0_0__retrievewithwhere_Chat",
+        "description": "Retrieve a list of chats"
+    },
+    {
+        "id": "Microsoft_Teams_ChatMessage__2_0_0__retrievewithwhere_ChatMessage",
+        "description": "Retrieve a set of chat messages"
+    },
+    {
+        "id": "Microsoft_Teams_ChatMessage__2_0_0__create_ChatMessage",
+        "description": "Create a chat message"
+    },
+    {
+        "id": "Microsoft_Teams_Group__3_0_0__retrievewithwhere_Group",
+        "description": "Retrieve all groups from MS Teams"
+    },
+    {
+        "id": "Microsoft_Teams_Member__3_0_0__retrievewithwhere_Member",
+        "description": "Retrieve a list of the members of a group"
+    },
+    {
+        "id": "Microsoft_Teams_Message__2_0_0__retrievewithwhere_Message",
+        "description": "Retrieve all messages in a channel"
+    },
+    {
+        "id": "Microsoft_Teams_Message__2_0_0__create_Message",
+        "description": "Create a message in a channel"
+    },
+    {
+        "id": "Microsoft_Teams_MessageReply__3_0_0__retrievewithwhere_MessageReply",
+        "description": "Retrieve replies to a message in a channel"
+    },
+    {
+        "id": "Microsoft_Teams_MessageReply__3_0_0__create_MessageReply",
+        "description": "Create a reply to a message in a channel"
+    },
+    {
+        "id": "Microsoft_Teams_Team__2_0_0__retrievewithwhere_Team",
+        "description": "Retrieve a list of all teams in MS Teams"
+    },
+    {
+        "id": "Microsoft_Teams_Team__2_0_0__updatewithwhere_Team",
+        "description": "Update the settings of a team"
+    },
+    {
+        "id": "Microsoft_Teams_User__3_0_0__retrievewithwhere_User",
+        "description": "Retrieve a list of users"
+    },
+    {
+        "id": "Microsoft_To_Do_deleteUsersByUserIdTodoListsByTodoTaskListId_model__1_0_0__deleteUsersByUserIdTodoListsByTodoTaskListId_deleteUsersByUserIdTodoListsByTodoTaskListId_model",
+        "description": "Delete a list from Microsoft To Do"
+    },
+    {
+        "id": "Microsoft_To_Do_deleteUsersByUserIdTodoListsByTodoTaskListIdTasksByTaskId_model__1_0_0__deleteUsersByUserIdTodoListsByTodoTaskListIdTasksByTaskId_deleteUsersByUserIdTodoListsByTodoTaskListIdTasksByTaskId_model",
+        "description": "Delete a task from Microsoft To Do"
+    },
+    {
+        "id": "Microsoft_To_Do_deleteUsersByUserIdTodoListsByTodoTaskListIdTasksByTodoTaskIdAttachmentsByAttachmentsId_model__1_0_0__deleteUsersByUserIdTodoListsByTodoTaskListIdTasksByTodoTaskIdAttachmentsByAttachmentsId_deleteUsersByUserIdTodoListsByTodoTaskListIdTasksByTodoTaskIdAttachmentsByAttachmentsId_model",
+        "description": "Delete a file attachment from Microsoft To Do"
+    },
+    {
+        "id": "Microsoft_To_Do_deleteUsersByUserIdTodoListsByTodoTaskListIdTasksByTodoTaskIdChecklistItemsByChecklistItemId_model__1_0_0__deleteUsersByUserIdTodoListsByTodoTaskListIdTasksByTodoTaskIdChecklistItemsByChecklistItemId_deleteUsersByUserIdTodoListsByTodoTaskListIdTasksByTodoTaskIdChecklistItemsByChecklistItemId_model",
+        "description": "Delete a checklist item from Microsoft To Do"
+    },
+    {
+        "id": "Microsoft_To_Do_getUsersByUserId1TodoListsByTodoTaskListIdTasks_model__1_0_0__retrievewithwhere_getUsersByUserId1TodoListsByTodoTaskListIdTasks_model",
+        "description": "Retrieve all the tasks from Microsoft To Do"
+    },
+    {
+        "id": "Microsoft_To_Do_getUsersByUserIdTodoLists_model__1_0_0__retrievewithwhere_getUsersByUserIdTodoLists_model",
+        "description": "Retrieve all the lists from Microsoft To Do"
+    },
+    {
+        "id": "Microsoft_To_Do_getUsersByUserIdTodoListsByTodoTaskListId_model__1_0_0__getUsersByUserIdTodoListsByTodoTaskListId_getUsersByUserIdTodoListsByTodoTaskListId_model",
+        "description": "Retrieve a list from Microsoft To Do by using an ID"
+    },
+    {
+        "id": "Microsoft_To_Do_getUsersByUserIdTodoListsByTodoTaskListIdTasks_model__1_0_0__getUsersByUserIdTodoListsByTodoTaskListIdTasks_getUsersByUserIdTodoListsByTodoTaskListIdTasks_model",
+        "description": "Update a list in Microsoft To Do"
+    },
+    {
+        "id": "Microsoft_To_Do_getUsersByUserIdTodoListsByTodoTaskListIdTasksByTodoTaskIdAttachmentsByAttachmentsId_model__1_0_0__getUsersByUserIdTodoListsByTodoTaskListIdTasksByTodoTaskIdAttachmentsByAttachmentsId_getUsersByUserIdTodoListsByTodoTaskListIdTasksByTodoTaskIdAttachmentsByAttachmentsId_model",
+        "description": "Retrieve a file attachment by using an ID in Microsoft To Do"
+    },
+    {
+        "id": "Microsoft_To_Do_getUsersByUserIdTodoListsByTodoTaskListIdTasksByTodoTaskIdChecklistItemsByChecklistItemId_model__1_0_0__getUsersByUserIdTodoListsByTodoTaskListIdTasksByTodoTaskIdChecklistItemsByChecklistItemId_getUsersByUserIdTodoListsByTodoTaskListIdTasksByTodoTaskIdChecklistItemsByChecklistItemId_model",
+        "description": "Retrieve a checklist item by using an ID in Microsoft To Do"
+    },
+    {
+        "id": "Microsoft_To_Do_patchUsersByUserIdTodoListsByTodoTaskListIdTasksByTaskId_model__1_0_0__patchUsersByUserIdTodoListsByTodoTaskListIdTasksByTaskId_patchUsersByUserIdTodoListsByTodoTaskListIdTasksByTaskId_model",
+        "description": "Update a task by using an ID in Microsoft To Do"
+    },
+    {
+        "id": "Microsoft_To_Do_patchUsersByUserIdTodoListsByTodoTaskListIdTasksByTodoTaskIdChecklistItemsByChecklistItemId_model__1_0_0__patchUsersByUserIdTodoListsByTodoTaskListIdTasksByTodoTaskIdChecklistItemsByChecklistItemId_patchUsersByUserIdTodoListsByTodoTaskListIdTasksByTodoTaskIdChecklistItemsByChecklistItemId_model",
+        "description": "Update a checklist item in Microsoft To Do"
+    },
+    {
+        "id": "Microsoft_To_Do_postUsersByUserIdTodoLists_model__1_0_0__postUsersByUserIdTodoLists_postUsersByUserIdTodoLists_model",
+        "description": "Create a list in Microsoft To Do"
+    },
+    {
+        "id": "Microsoft_To_Do_postUsersByUserIdTodoListsByTodoTaskListIdTasks_model__1_0_0__postUsersByUserIdTodoListsByTodoTaskListIdTasks_postUsersByUserIdTodoListsByTodoTaskListIdTasks_model",
+        "description": "Create a task in Microsoft To Do"
+    },
+    {
+        "id": "Microsoft_To_Do_postUsersByUserIdTodoListsByTodoTaskListIdTasksByTodoTaskIdAttachments_model__1_0_0__postUsersByUserIdTodoListsByTodoTaskListIdTasksByTodoTaskIdAttachments_postUsersByUserIdTodoListsByTodoTaskListIdTasksByTodoTaskIdAttachments_model",
+        "description": "Create a file attachment in Microsoft To Do"
+    },
+    {
+        "id": "Microsoft_To_Do_postUsersByUserIdTodoListsByTodoTaskListIdTasksByTodoTaskIdChecklistItems_model__1_0_0__postUsersByUserIdTodoListsByTodoTaskListIdTasksByTodoTaskIdChecklistItems_postUsersByUserIdTodoListsByTodoTaskListIdTasksByTodoTaskIdChecklistItems_model",
+        "description": "Create a checklist item in Microsoft To Do"
+    },
+    {
+        "id": "Salesforce_Account__5_0_0__retrievewithwhere_Account",
+        "description": "Retrieve all accounts from Salesforce"
+    },
+    {
+        "id": "Salesforce_Account__5_0_0__create_Account",
+        "description": "Create an account in Salesforce"
+    },
+    {
+        "id": "Salesforce_Account__5_0_0__updatewithwhere_Account",
+        "description": "Select an account ID to be updated"
+    },
+    {
+        "id": "Salesforce_Asset__8_0_0__retrievewithwhere_Asset",
+        "description": "Retrieve all assets from Salesforce"
+    },
+    {
+        "id": "Salesforce_Asset__8_0_0__create_Asset",
+        "description": "Create an asset in Salesforce"
+    },
+    {
+        "id": "Salesforce_Asset__8_0_0__deletewithwhere_Asset",
+        "description": "Delete an asset from Salesforce"
+    },
+    {
+        "id": "Salesforce_Asset__8_0_0__updatewithwhere_Asset",
+        "description": "Update an asset in Salesforce"
+    },
+    {
+        "id": "Salesforce_Campaign__8_0_0__retrievewithwhere_Campaign",
+        "description": "Retrieve all campaigns from Salesforce"
+    },
+    {
+        "id": "Salesforce_Campaign__8_0_0__create_Campaign",
+        "description": "Create a campaign in Salesforce"
+    },
+    {
+        "id": "Salesforce_Campaign__8_0_0__deletewithwhere_Campaign",
+        "description": "Delete a campaign from Salesforce"
+    },
+    {
+        "id": "Salesforce_Campaign__8_0_0__updatewithwhere_Campaign",
+        "description": "Update a campaign in Salesforce"
+    },
+    {
+        "id": "Salesforce_Case__5_0_0__retrievewithwhere_Case",
+        "description": "Retrieve all cases from Salesforce"
+    },
+    {
+        "id": "Salesforce_Case__5_0_0__create_Case",
+        "description": "Create a case in Salesforce"
+    },
+    {
+        "id": "Salesforce_Case__5_0_0__updatewithwhere_Case",
+        "description": "Select a case ID to be updated"
+    },
+    {
+        "id": "Salesforce_CaseComment__7_0_0__retrievewithwhere_CaseComment",
+        "description": "Retrieve all case comments from Salesforce"
+    },
+    {
+        "id": "Salesforce_CaseComment__7_0_0__create_CaseComment",
+        "description": "Create a case comment in Salesforce"
+    },
+    {
+        "id": "Salesforce_CaseComment__7_0_0__updatewithwhere_CaseComment",
+        "description": "Update a case comment in Salesforce"
+    },
+    {
+        "id": "Salesforce_CaseHistory__7_0_0__retrievewithwhere_CaseHistory",
+        "description": "Retrieve all case histories from Salesforce"
+    },
+    {
+        "id": "Salesforce_CaseStatus__7_0_0__retrievewithwhere_CaseStatus",
+        "description": "Retrieve all case status values from Salesforce"
+    },
+    {
+        "id": "Salesforce_CaseTeamMember__7_0_0__retrievewithwhere_CaseTeamMember",
+        "description": "Retrieve all case team members from Salesforce"
+    },
+    {
+        "id": "Salesforce_CaseTeamMember__7_0_0__create_CaseTeamMember",
+        "description": "Create a case team member in Salesforce"
+    },
+    {
+        "id": "Salesforce_CaseTeamMember__7_0_0__updatewithwhere_CaseTeamMember",
+        "description": "Update a case team member in Salesforce"
+    },
+    {
+        "id": "Salesforce_CaseTeamRole__7_0_0__retrievewithwhere_CaseTeamRole",
+        "description": "Retrieve all case team member roles from Salesforce"
+    },
+    {
+        "id": "Salesforce_CaseTeamRole__7_0_0__create_CaseTeamRole",
+        "description": "Create a case team member role in Salesforce"
+    },
+    {
+        "id": "Salesforce_CaseTeamTemplate__8_0_0__retrievewithwhere_CaseTeamTemplate",
+        "description": "Retrieve all case team templates"
+    },
+    {
+        "id": "Salesforce_CaseTeamTemplate__8_0_0__create_CaseTeamTemplate",
+        "description": "Create a case team template"
+    },
+    {
+        "id": "Salesforce_CaseTeamTemplate__8_0_0__deletewithwhere_CaseTeamTemplate",
+        "description": "Delete a case team template"
+    },
+    {
+        "id": "Salesforce_CaseTeamTemplate__8_0_0__updatewithwhere_CaseTeamTemplate",
+        "description": "Update a case team template"
+    },
+    {
+        "id": "Salesforce_CaseTeamTemplateMember__8_0_0__retrievewithwhere_CaseTeamTemplateMember",
+        "description": "Get all templates for case team members"
+    },
+    {
+        "id": "Salesforce_CaseTeamTemplateMember__8_0_0__create_CaseTeamTemplateMember",
+        "description": "Create a template that can be used to create a case team member"
+    },
+    {
+        "id": "Salesforce_CaseTeamTemplateMember__8_0_0__deletewithwhere_CaseTeamTemplateMember",
+        "description": "Delete a case team member template"
+    },
+    {
+        "id": "Salesforce_CaseTeamTemplateMember__8_0_0__updatewithwhere_CaseTeamTemplateMember",
+        "description": "Update a case team member template"
+    },
+    {
+        "id": "Salesforce_Contact__5_0_0__retrievewithwhere_Contact",
+        "description": "Retrieve all contacts from Salesforce"
+    },
+    {
+        "id": "Salesforce_Contact__5_0_0__create_Contact",
+        "description": "Create a contact in Salesforce"
+    },
+    {
+        "id": "Salesforce_Contact__5_0_0__updatewithwhere_Contact",
+        "description": "Select a contact ID to be updated"
+    },
+    {
+        "id": "Salesforce_Contract__8_0_0__retrievewithwhere_Contract",
+        "description": "Retrieve all contracts from Salesforce"
+    },
+    {
+        "id": "Salesforce_Contract__8_0_0__create_Contract",
+        "description": "Create a contract in Salesforce"
+    },
+    {
+        "id": "Salesforce_Contract__8_0_0__deletewithwhere_Contract",
+        "description": "Delete a contract from Salesforce"
+    },
+    {
+        "id": "Salesforce_Contract__8_0_0__updatewithwhere_Contract",
+        "description": "Update a contract in Salesforce"
+    },
+    {
+        "id": "Salesforce_FeedComment__8_0_0__retrievewithwhere_FeedComment",
+        "description": "Retrieve all feed comments from Salesforce"
+    },
+    {
+        "id": "Salesforce_FeedComment__8_0_0__create_FeedComment",
+        "description": "Create a feed comment in Salesforce"
+    },
+    {
+        "id": "Salesforce_FeedComment__8_0_0__deletewithwhere_FeedComment",
+        "description": "Delete a feed comment from Salesforce"
+    },
+    {
+        "id": "Salesforce_FeedComment__8_0_0__updatewithwhere_FeedComment",
+        "description": "Update a feed comment in Salesforce"
+    },
+    {
+        "id": "Salesforce_FeedItem__7_0_0__retrievewithwhere_FeedItem",
+        "description": "Retrieve all feed items from Salesforce"
+    },
+    {
+        "id": "Salesforce_FeedItem__7_0_0__create_FeedItem",
+        "description": "Create a feed item in Salesforce"
+    },
+    {
+        "id": "Salesforce_FeedItem__7_0_0__deletewithwhere_FeedItem",
+        "description": "Delete a feed item from Salesforce"
+    },
+    {
+        "id": "Salesforce_FeedItem__7_0_0__updatewithwhere_FeedItem",
+        "description": "Salesforce_FeedItem__7_0_0__updatewithwhere_FeedItem"
+    },
+    {
+        "id": "Salesforce_File__7_0_0__retrievewithwhere_File",
+        "description": "Retrieve all files from Salesforce"
+    },
+    {
+        "id": "Salesforce_File__7_0_0__create_File",
+        "description": "Create a file in Salesforce"
+    },
+    {
+        "id": "Salesforce_File__7_0_0__DOWNLOADFILECONTENT_File",
+        "description": "Salesforce_File__7_0_0__DOWNLOADFILECONTENT_File"
+    },
+    {
+        "id": "Salesforce_Individual__8_0_0__retrievewithwhere_Individual",
+        "description": "Retrieve all individuals from Salesforce"
+    },
+    {
+        "id": "Salesforce_Individual__8_0_0__create_Individual",
+        "description": "Create an individual in Salesforce"
+    },
+    {
+        "id": "Salesforce_Individual__8_0_0__deletewithwhere_Individual",
+        "description": "Delete an individual from Salesforce"
+    },
+    {
+        "id": "Salesforce_Individual__8_0_0__updatewithwhere_Individual",
+        "description": "Update an individual in Salesforce"
+    },
+    {
+        "id": "Salesforce_Lead__5_0_0__retrievewithwhere_Lead",
+        "description": "Retrieve all leads from Salesforce"
+    },
+    {
+        "id": "Salesforce_Lead__5_0_0__create_Lead",
+        "description": "Create a lead in Salesforce"
+    },
+    {
+        "id": "Salesforce_Lead__5_0_0__updatewithwhere_Lead",
+        "description": "Select a lead ID to be updated"
+    },
+    {
+        "id": "Salesforce_Opportunity__5_0_0__retrievewithwhere_Opportunity",
+        "description": "Retrieve all opportunities from Salesforce"
+    },
+    {
+        "id": "Salesforce_Opportunity__5_0_0__updatewithwhere_Opportunity",
+        "description": "Select an opportunity ID to be updated"
+    },
+    {
+        "id": "Salesforce_OpportunityHistory__8_0_0__retrievewithwhere_OpportunityHistory",
+        "description": "Retrieve all opportunity histories from Salesforce"
+    },
+    {
+        "id": "Salesforce_Order__5_0_0__retrievewithwhere_Order",
+        "description": "Retrieve all orders from Salesforce"
+    },
+    {
+        "id": "Salesforce_Order__5_0_0__create_Order",
+        "description": "Create an order in Salesforce"
+    },
+    {
+        "id": "Salesforce_Order__5_0_0__updatewithwhere_Order",
+        "description": "Update an order in Salesforce"
+    },
+    {
+        "id": "Salesforce_Pricebook2__8_0_0__retrievewithwhere_Pricebook2",
+        "description": "Retrieve all price books from Salesforce"
+    },
+    {
+        "id": "Salesforce_Pricebook2__8_0_0__create_Pricebook2",
+        "description": "Create a price book in Salesforce"
+    },
+    {
+        "id": "Salesforce_Pricebook2__8_0_0__deletewithwhere_Pricebook2",
+        "description": "Delete a price book from Salesforce"
+    },
+    {
+        "id": "Salesforce_Pricebook2__8_0_0__updatewithwhere_Pricebook2",
+        "description": "Update a price book in Salesforce"
+    },
+    {
+        "id": "Salesforce_Product2__7_0_0__retrievewithwhere_Product2",
+        "description": "Retrieve all products from Salesforce"
+    },
+    {
+        "id": "Salesforce_Product2__7_0_0__create_Product2",
+        "description": "Create a product in Salesforce"
+    },
+    {
+        "id": "Salesforce_Product2__7_0_0__deletewithwhere_Product2",
+        "description": "Delete a product from Salesforce"
+    },
+    {
+        "id": "Salesforce_Product2__7_0_0__updatewithwhere_Product2",
+        "description": "Update a product in Salesforce"
+    },
+    {
+        "id": "Salesforce_Report__8_0_0__retrievewithwhere_Report",
+        "description": "Retrieve all reports from Salesforce"
+    },
+    {
+        "id": "Salesforce_Solution__7_0_0__retrievewithwhere_Solution",
+        "description": "Retrieve all solutions from Salesforce"
+    },
+    {
+        "id": "Salesforce_Solution__7_0_0__create_Solution",
+        "description": "Create a solution in Salesforce"
+    },
+    {
+        "id": "Salesforce_Solution__7_0_0__deletewithwhere_Solution",
+        "description": "Delete a solution from Salesforce"
+    },
+    {
+        "id": "Salesforce_Solution__7_0_0__updatewithwhere_Solution",
+        "description": "Update a solution in Salesforce"
+    },
+    {
+        "id": "Salesforce_Task__7_0_0__retrievewithwhere_Task",
+        "description": "Retrieve all tasks in Salesforce"
+    },
+    {
+        "id": "Salesforce_Task__7_0_0__create_Task",
+        "description": "Create a task in Salesforce"
+    },
+    {
+        "id": "Salesforce_Task__7_0_0__deletewithwhere_Task",
+        "description": "Delete a task from Salesforce"
+    },
+    {
+        "id": "Salesforce_Task__7_0_0__updatewithwhere_Task",
+        "description": "Update a task in Salesforce"
+    },
+    {
+        "id": "Salesforce_User__7_0_0__retrievewithwhere_User",
+        "description": "Retrieve all users from Salesforce"
+    },
+    {
+        "id": "Salesforce_UserRole__8_0_0__retrievewithwhere_UserRole",
+        "description": "Retrieve all roles from Salesforce"
+    },
+    {
+        "id": "Salesforce_UserRole__8_0_0__create_UserRole",
+        "description": "Create a role in Salesforce"
+    },
+    {
+        "id": "Salesforce_UserRole__8_0_0__deletewithwhere_UserRole",
+        "description": "Delete a role from Salesforce"
+    },
+    {
+        "id": "Salesforce_UserRole__8_0_0__updatewithwhere_UserRole",
+        "description": "Update a role in Salesforce"
+    },
+    {
+        "id": "ServiceNow_alm_asset__5_0_0__retrievewithwhere_alm_asset",
+        "description": "Retrieve all the assets from ServiceNow"
+    },
+    {
+        "id": "ServiceNow_alm_asset__5_0_0__create_alm_asset",
+        "description": "Create an asset in ServiceNow"
+    },
+    {
+        "id": "ServiceNow_alm_asset__5_0_0__deletewithwhere_alm_asset",
+        "description": "Delete an asset from ServiceNow"
+    },
+    {
+        "id": "ServiceNow_alm_asset__5_0_0__updatewithwhere_alm_asset",
+        "description": "Update an asset in ServiceNow"
+    },
+    {
+        "id": "ServiceNow_cmn_department__5_0_0__retrievewithwhere_cmn_department",
+        "description": "Retrieve all the departments from ServiceNow"
+    },
+    {
+        "id": "ServiceNow_cmn_department__5_0_0__create_cmn_department",
+        "description": "Create a department in ServiceNow"
+    },
+    {
+        "id": "ServiceNow_cmn_department__5_0_0__deletewithwhere_cmn_department",
+        "description": "Delete a department from ServiceNow"
+    },
+    {
+        "id": "ServiceNow_cmn_department__5_0_0__updatewithwhere_cmn_department",
+        "description": "Update a department in ServiceNow"
+    },
+    {
+        "id": "ServiceNow_incident__4_0_0__retrievewithwhere_incident",
+        "description": "Retrieve all incidents from ServiceNow"
+    },
+    {
+        "id": "ServiceNow_incident__4_0_0__create_incident",
+        "description": "Create an incident in ServiceNow"
+    },
+    {
+        "id": "ServiceNow_incident__4_0_0__deletewithwhere_incident",
+        "description": "Delete an incident from ServiceNow"
+    },
+    {
+        "id": "ServiceNow_incident__4_0_0__updatewithwhere_incident",
+        "description": "Update an incident in ServiceNow"
+    },
+    {
+        "id": "ServiceNow_kb_knowledge__5_0_0__retrievewithwhere_kb_knowledge",
+        "description": "Retrieve all knowledge articles from ServiceNow"
+    },
+    {
+        "id": "ServiceNow_kb_knowledge__5_0_0__create_kb_knowledge",
+        "description": "Creates a knowledge article in ServiceNow"
+    },
+    {
+        "id": "ServiceNow_kb_knowledge__5_0_0__deletewithwhere_kb_knowledge",
+        "description": "Delete a knowledge article from ServiceNow"
+    },
+    {
+        "id": "ServiceNow_kb_knowledge__5_0_0__updatewithwhere_kb_knowledge",
+        "description": "Update a knowledge article in ServiceNow"
+    },
+    {
+        "id": "ServiceNow_sys_attachment__4_0_0__create_sys_attachment",
+        "description": "Add an attachment to a ServiceNow incident"
+    },
+    {
+        "id": "ServiceNow_sys_journal_field__4_0_0__retrievewithwhere_sys_journal_field",
+        "description": "Retrieve all comments from ServiceNow"
+    },
+    {
+        "id": "ServiceNow_sys_journal_field__4_0_0__create_sys_journal_field",
+        "description": "Create a comment in ServiceNow"
+    },
+    {
+        "id": "ServiceNow_sys_user__5_0_0__retrievewithwhere_sys_user",
+        "description": "Retrieve all system users from ServiceNow"
+    },
+    {
+        "id": "ServiceNow_sys_user__5_0_0__create_sys_user",
+        "description": "Create a system user in ServiceNow"
+    },
+    {
+        "id": "ServiceNow_sys_user__5_0_0__deletewithwhere_sys_user",
+        "description": "Delete system users from ServiceNow"
+    },
+    {
+        "id": "ServiceNow_sys_user__5_0_0__updatewithwhere_sys_user",
+        "description": "Update a system user in ServiceNow"
+    },
+    {
+        "id": "ServiceNow_ticket__5_0_0__retrievewithwhere_ticket",
+        "description": "Retrieve all the tickets from ServiceNow"
+    },
+    {
+        "id": "ServiceNow_ticket__5_0_0__create_ticket",
+        "description": "Create a ticket in ServiceNow"
+    },
+    {
+        "id": "ServiceNow_ticket__5_0_0__deletewithwhere_ticket",
+        "description": "Delete a ticket from ServiceNow"
+    },
+    {
+        "id": "ServiceNow_ticket__5_0_0__updatewithwhere_ticket",
+        "description": "Update a ticket in ServiceNow"
+    },
+    {
+        "id": "Slack_channel__3_0_0__retrievewithwhere_channel",
+        "description": "Retrieve channels from Slack"
+    },
+    {
+        "id": "Slack_im__3_0_0__retrievewithwhere_im",
+        "description": "Retrieve all direct message channels from Slack"
+    },
+    {
+        "id": "Slack_message__3_0_0__create_message",
+        "description": "A new message is posted in Slack"
+    },
+    {
+        "id": "Slack_mpim__3_0_0__retrievewithwhere_mpim",
+        "description": "Retrieve all multiparty direct message channels from Slack"
+    },
+    {
+        "id": "Slack_user__4_0_0__retrievewithwhere_user",
+        "description": "Retrieve all users from Slack"
+    },
+    {
+        "id": "Trello_Action__2_0_0__retrievewithwhere_Action",
+        "description": "Retrieve all actions from a Trello card"
+    },
+    {
+        "id": "Trello_Action__2_0_0__updatewithwhere_Action",
+        "description": "Update an action on a Trello card"
+    },
+    {
+        "id": "Trello_Action__2_0_0__deletewithwhere_Action",
+        "description": "Delete an action from a Trello card"
+    },
+    {
+        "id": "Trello_Board__2_0_0__create_Board",
+        "description": "Create a board in Trello"
+    },
+    {
+        "id": "Trello_Board__2_0_0__deletewithwhere_Board",
+        "description": "Delete a board from Trello"
+    },
+    {
+        "id": "Trello_Board__2_0_0__retrievewithwhere_Board",
+        "description": "Retrieve all the boards from Trello"
+    },
+    {
+        "id": "Trello_Board__2_0_0__updatewithwhere_Board",
+        "description": "Update the details of a board in Trello"
+    },
+    {
+        "id": "Trello_Card__2_0_0__create_Card",
+        "description": "Create a card in Trello"
+    },
+    {
+        "id": "Trello_Card__2_0_0__retrievewithwhere_Card",
+        "description": "Retrieve all cards from Trello"
+    },
+    {
+        "id": "Trello_Card__2_0_0__deletewithwhere_Card",
+        "description": "Delete a card from Trello"
+    },
+    {
+        "id": "Trello_Checkitem__2_0_0__create_Checkitem",
+        "description": "Add an item to a Trello checklist"
+    },
+    {
+        "id": "Trello_Checkitem__2_0_0__deletewithwhere_Checkitem",
+        "description": "Delete an item from a Trello checklist"
+    },
+    {
+        "id": "Trello_Checkitem__2_0_0__retrievewithwhere_Checkitem",
+        "description": "Retrieve all checklist items from Trello"
+    },
+    {
+        "id": "Trello_Checkitem__2_0_0__updatewithwhere_Checkitem",
+        "description": "Update an item in a Trello checklist"
+    },
+    {
+        "id": "Trello_Checklist__2_0_0__updatewithwhere_Checklist",
+        "description": "Update the details of a checklist in Trello"
+    },
+    {
+        "id": "Trello_Checklist__2_0_0__retrievewithwhere_Checklist",
+        "description": "Retrieve all the checklists from Trello"
+    },
+    {
+        "id": "Trello_Checklist__2_0_0__create_Checklist",
+        "description": "Add a checklist to a Trello card"
+    },
+    {
+        "id": "Trello_Checklist__2_0_0__deletewithwhere_Checklist",
+        "description": "Delete a checklist from a Trello card"
+    },
+    {
+        "id": "Trello_Comment__2_0_0__create_Comment",
+        "description": "Add a comment to a Trello card"
+    },
+    {
+        "id": "Trello_Comment__2_0_0__deletewithwhere_Comment",
+        "description": "Delete a comment from a Trello card"
+    },
+    {
+        "id": "Trello_Comment__2_0_0__updatewithwhere_Comment",
+        "description": "Update a comment on a Trello card"
+    },
+    {
+        "id": "Trello_Label__2_0_0__create_Label",
+        "description": "Add a label to a Trello card"
+    },
+    {
+        "id": "Trello_Label__2_0_0__retrievewithwhere_Label",
+        "description": "Retrieve all the labels for a Trello card"
+    },
+    {
+        "id": "Trello_Label__2_0_0__deletewithwhere_Label",
+        "description": "Delete a label from a Trello card"
+    },
+    {
+        "id": "Trello_Label__2_0_0__updatewithwhere_Label",
+        "description": "Update a label on a Trello card"
+    },
+    {
+        "id": "Trello_List__2_0_0__retrievewithwhere_List",
+        "description": "Retrieve all lists from Trello"
+    },
+    {
+        "id": "Trello_List__2_0_0__updatewithwhere_List",
+        "description": "Update the details of a list in Trello"
+    },
+    {
+        "id": "Trello_Member__2_0_0__retrievewithwhere_Member",
+        "description": "Retrieve all members of a Trello board"
+    },
+    {
+        "id": "Trello_Member__2_0_0__create_Member",
+        "description": "Add a member to a Trello card"
+    },
+    {
+        "id": "Trello_Organization__2_0_0__retrievewithwhere_Organization",
+        "description": "Retrieve all teams from Trello"
+    },
+    {
+        "id": "Trello_Organization__2_0_0__updatewithwhere_Organization",
+        "description": "Update the details of a Trello team"
+    },
+    {
+        "id": "Twilio_getCallsByCallSIDjson_model__2_0_0__getCallsByCallSIDjson_getCallsByCallSIDjson_model",
+        "description": "Retrieve the call details associated with a specific ID"
+    },
+    {
+        "id": "Twilio_getCallsjson_model__2_0_0__retrievewithwhere_getCallsjson_model",
+        "description": "Retrieve the details of all calls"
+    },
+    {
+        "id": "Twilio_getIncomingPhoneNumbersjson_model__2_0_0__retrievewithwhere_getIncomingPhoneNumbersjson_model",
+        "description": "Retrieve all the incoming phone numbers"
+    },
+    {
+        "id": "Twilio_getMessagesBySIDjson_model__2_0_0__getMessagesBySIDjson_getMessagesBySIDjson_model",
+        "description": "Retrieve a message by using a specific ID"
+    },
+    {
+        "id": "Twilio_getMessagesjson_model__2_0_0__retrievewithwhere_getMessagesjson_model",
+        "description": "Retrieves all the messages"
+    },
+    {
+        "id": "Twilio_getServices_model__2_0_0__retrievewithwhere_getServices_model",
+        "description": "Retrieve all the message services"
+    },
+    {
+        "id": "Twilio_postCallsByCallSIDjson_model__2_0_0__postCallsByCallSIDjson_postCallsByCallSIDjson_model",
+        "description": "Update the details of a call by using a specific ID"
+    },
+    {
+        "id": "Twilio_postMessagesjsonByFromphone_model__2_0_0__postMessagesjsonByFromphone_postMessagesjsonByFromphone_model",
+        "description": "Send a message by using a phone number"
+    },
+    {
+        "id": "Twilio_postMessagesRedactBySIDjson_model__2_0_0__postMessagesRedactBySIDjson_postMessagesRedactBySIDjson_model",
+        "description": "Redact a message"
+    },
+    {
+        "id": "Twilio_postMessagingServiceSidMessagesjson_model__2_0_0__postMessagingServiceSidMessagesjson_postMessagingServiceSidMessagesjson_model",
+        "description": "Send a message by using a messaging service"
+    },
+    {
+        "id": "Zendesk_Service_asset__3_0_0__retrievewithwhere_asset",
+        "description": "Retrieve all asset from Zendesk service"
+    },
+    {
+        "id": "Zendesk_Service_asset__3_0_0__create_asset",
+        "description": "Create an asset in Zendesk service"
+    },
+    {
+        "id": "Zendesk_Service_asset__3_0_0__deletewithwhere_asset",
+        "description": "Delete an asset from Zendesk service"
+    },
+    {
+        "id": "Zendesk_Service_asset__3_0_0__updatewithwhere_asset",
+        "description": "Update an asset in Zendesk service"
+    },
+    {
+        "id": "Zendesk_Service_group__3_0_0__retrievewithwhere_group",
+        "description": "Retrieve all groups from Zendesk"
+    },
+    {
+        "id": "Zendesk_Service_Organization__3_0_0__retrievewithwhere_Organization",
+        "description": "Retrieve all organizations from Zendesk"
+    },
+    {
+        "id": "Zendesk_Service_person__3_0_0__retrievewithwhere_person",
+        "description": "Retrieve all people from Zendesk"
+    },
+    {
+        "id": "Zendesk_Service_person__3_0_0__create_person",
+        "description": "Create a person in Zendesk"
+    },
+    {
+        "id": "Zendesk_Service_person__3_0_0__deletewithwhere_person",
+        "description": "Delete a person from Zendesk"
+    },
+    {
+        "id": "Zendesk_Service_person__3_0_0__updatewithwhere_person",
+        "description": "Update a person in Zendesk"
+    },
+    {
+        "id": "Zendesk_Service_product__3_0_0__retrievewithwhere_product",
+        "description": "Retrieve all products from Zendesk"
+    },
+    {
+        "id": "Zendesk_Service_product__3_0_0__create_product",
+        "description": "Create a product in Zendesk"
+    },
+    {
+        "id": "Zendesk_Service_product__3_0_0__deletewithwhere_product",
+        "description": "Delete a product from Zendesk"
+    },
+    {
+        "id": "Zendesk_Service_product__3_0_0__updatewithwhere_product",
+        "description": "Update a product in Zendesk"
+    },
+    {
+        "id": "Zendesk_Service_Ticket__2_0_0__retrievewithwhere_Ticket",
+        "description": "Retrieves the tickets"
+    },
+    {
+        "id": "Zendesk_Service_Ticket__2_0_0__create_Ticket",
+        "description": "Create a ticket"
+    },
+    {
+        "id": "Zendesk_Service_ticketAttachment__2_0_0__UPLOADATTACHMENT_ticketAttachment",
+        "description": "Upload an attachment to a Zendesk ticket"
+    },
+    {
+        "id": "Zendesk_Service_ticketComment__2_0_0__retrievewithwhere_ticketComment",
+        "description": "Retrieve all ticket comments"
+    },
+    {
+        "id": "Zendesk_Service_ticketComment__2_0_0__create_ticketComment",
+        "description": "Create a ticket comment in Zendesk"
+    },
+    {
+        "id": "Zendesk_Service_User__3_0_0__retrievewithwhere_User",
+        "description": "Retrieve all users from Zendesk"
+    },
+    {
+        "id": "Zendesk_Service_User__3_0_0__create_User",
+        "description": "Create a user in Zendesk"
+    }
+]

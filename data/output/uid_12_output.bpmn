@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" exporter="bpmn-js (https://demo.bpmn.io)" exporterVersion="18.3.1">
+  <process id="Process_1" isExecutable="false">
+    <startEvent id="startEvent_1" name="Start" />
+    <task id="task_2" name="Salesforce_Contact__5_0_0__create_Contact">
+      <outgoing>Flow_1rtwiw2</outgoing>
+    </task>
+    <sequenceFlow id="flow_startEvent_1_task_2" sourceRef="startEvent_1" targetRef="task_2" />
+    <task id="task_3" name="Box_Folder__3_0_0__create_Folder">
+      <incoming>Flow_1rtwiw2</incoming>
+    </task>
+    <exclusiveGateway id="exclusiveGateway_4" name="Decision: folder.name == None">
+      <outgoing>Flow_14m4mds</outgoing>
+    </exclusiveGateway>
+    <sequenceFlow id="flow_task_3_exclusiveGateway_4" sourceRef="task_3" targetRef="exclusiveGateway_4" />
+    <task id="task_5" name="Microsoft_Exchange_Messages__2_0_0__SENDOUTLOOK_Messages">
+      <incoming>Flow_14m4mds</incoming>
+    </task>
+    <task id="task_6" name="Slack_message__3_0_0__create_message" />
+    <sequenceFlow id="flow_exclusiveGateway_4_task_6" name="" sourceRef="exclusiveGateway_4" targetRef="task_6" />
+    <exclusiveGateway id="exclusiveGateway_7" name="Merge">
+      <outgoing>Flow_1llh31c</outgoing>
+    </exclusiveGateway>
+    <sequenceFlow id="flow_task_5_exclusiveGateway_7" sourceRef="task_5" targetRef="exclusiveGateway_7" />
+    <sequenceFlow id="flow_task_6_exclusiveGateway_7" sourceRef="task_6" targetRef="exclusiveGateway_7" />
+    <endEvent id="endEvent_8" name="End">
+      <incoming>Flow_1llh31c</incoming>
+    </endEvent>
+    <sequenceFlow id="Flow_1llh31c" sourceRef="exclusiveGateway_7" targetRef="endEvent_8" />
+    <sequenceFlow id="Flow_1rtwiw2" sourceRef="task_2" targetRef="task_3" />
+    <sequenceFlow id="Flow_14m4mds" name="" sourceRef="exclusiveGateway_4" targetRef="task_5" />
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_1">
+      <bpmndi:BPMNShape id="BPMNShape_endEvent_8" bpmnElement="endEvent_8">
+        <dc:Bounds x="1322" y="172" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1330" y="208" width="20" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_exclusiveGateway_7" bpmnElement="exclusiveGateway_7" isMarkerVisible="true">
+        <dc:Bounds x="1115" y="165" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1124" y="215" width="32" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_task_6" bpmnElement="task_6">
+        <dc:Bounds x="820" y="90" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_task_5" bpmnElement="task_5">
+        <dc:Bounds x="820" y="210" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_startEvent_1" bpmnElement="startEvent_1">
+        <dc:Bounds x="152" y="150" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="158" y="186" width="24" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_exclusiveGateway_4" bpmnElement="exclusiveGateway_4" isMarkerVisible="true">
+        <dc:Bounds x="645" y="95" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="633" y="45" width="74" height="40" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_task_3" bpmnElement="task_3">
+        <dc:Bounds x="420" y="150" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_task_2" bpmnElement="task_2">
+        <dc:Bounds x="270" y="150" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="BPMNEdge_flow_startEvent_1_task_2" bpmnElement="flow_startEvent_1_task_2">
+        <di:waypoint x="181" y="154" />
+        <di:waypoint x="209" y="154" />
+        <di:waypoint x="209" y="190" />
+        <di:waypoint x="270" y="190" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_flow_task_3_exclusiveGateway_4" bpmnElement="flow_task_3_exclusiveGateway_4">
+        <di:waypoint x="520" y="185" />
+        <di:waypoint x="558" y="185" />
+        <di:waypoint x="558" y="123" />
+        <di:waypoint x="648" y="123" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_flow_exclusiveGateway_4_task_6" bpmnElement="flow_exclusiveGateway_4_task_6">
+        <di:waypoint x="695" y="120" />
+        <di:waypoint x="770" y="120" />
+        <di:waypoint x="770" y="130" />
+        <di:waypoint x="820" y="130" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="715" y="122" width="21" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_flow_task_5_exclusiveGateway_7" bpmnElement="flow_task_5_exclusiveGateway_7">
+        <di:waypoint x="920" y="245" />
+        <di:waypoint x="1030" y="245" />
+        <di:waypoint x="1030" y="193" />
+        <di:waypoint x="1118" y="193" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_flow_task_6_exclusiveGateway_7" bpmnElement="flow_task_6_exclusiveGateway_7">
+        <di:waypoint x="920" y="125" />
+        <di:waypoint x="1030" y="125" />
+        <di:waypoint x="1030" y="193" />
+        <di:waypoint x="1118" y="193" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1llh31c_di" bpmnElement="Flow_1llh31c">
+        <di:waypoint x="1165" y="190" />
+        <di:waypoint x="1322" y="190" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1rtwiw2_di" bpmnElement="Flow_1rtwiw2">
+        <di:waypoint x="370" y="190" />
+        <di:waypoint x="420" y="190" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_14m4mds_di" bpmnElement="Flow_14m4mds">
+        <di:waypoint x="670" y="145" />
+        <di:waypoint x="670" y="250" />
+        <di:waypoint x="820" y="250" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="622" y="195" width="6" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>

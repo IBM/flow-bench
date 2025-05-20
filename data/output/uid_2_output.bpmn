@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" exporter="bpmn-js (https://demo.bpmn.io)" exporterVersion="18.3.1">
+  <process id="Process_1" isExecutable="false">
+    <startEvent id="startEvent_1" name="Start" />
+    <task id="task_2" name="ServiceNow_incident__4_0_0__retrievewithwhere_incident" />
+    <sequenceFlow id="flow_startEvent_1_task_2" sourceRef="startEvent_1" targetRef="task_2" />
+    <exclusiveGateway id="gateway_3" name="Decision: incident.impact == &#39;high&#39;" />
+    <sequenceFlow id="flow_task_2_gateway_3" sourceRef="task_2" targetRef="gateway_3" />
+    <task id="task_4" name="Jira_Issue__2_0_0__create_Issue" />
+    <sequenceFlow id="flow_gateway_3_task_4" sourceRef="gateway_3" targetRef="task_4" />
+    <task id="task_5" name="Slack_message__3_0_0__create_message" />
+    <sequenceFlow id="flow_task_4_task_5" sourceRef="task_4" targetRef="task_5" />
+    <task id="task_6" name="GitHub_Issue__3_0_0__create_Issue" />
+    <sequenceFlow id="flow_gateway_3_task_6" sourceRef="gateway_3" targetRef="task_6" />
+    <exclusiveGateway id="gateway_7" name="Merge" />
+    <sequenceFlow id="flow_task_5_gateway_7" sourceRef="task_5" targetRef="gateway_7" />
+    <sequenceFlow id="flow_task_6_gateway_7" sourceRef="task_6" targetRef="gateway_7" />
+    <endEvent id="endEvent_8" name="End" />
+    <sequenceFlow id="flow_gateway_7_endEvent_8" sourceRef="gateway_7" targetRef="endEvent_8" />
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_1">
+      <bpmndi:BPMNShape id="BPMNShape_startEvent_1" bpmnElement="startEvent_1">
+        <dc:Bounds x="186" y="136" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="192" y="172" width="24" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_task_2" bpmnElement="task_2">
+        <dc:Bounds x="330" y="114" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_gateway_3" bpmnElement="gateway_3">
+        <dc:Bounds x="565" y="121" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="545" y="181" width="90" height="40" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_task_4" bpmnElement="task_4">
+        <dc:Bounds x="680" y="106" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_task_5" bpmnElement="task_5">
+        <dc:Bounds x="900" y="106" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_task_6" bpmnElement="task_6">
+        <dc:Bounds x="680" y="260" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_gateway_7" bpmnElement="gateway_7">
+        <dc:Bounds x="1235" y="267" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1244" y="243" width="32" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_endEvent_8" bpmnElement="endEvent_8">
+        <dc:Bounds x="1412" y="272" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1420" y="248" width="20" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="BPMNEdge_flow_startEvent_1_task_2" bpmnElement="flow_startEvent_1_task_2">
+        <di:waypoint x="222" y="154" />
+        <di:waypoint x="330" y="154" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_flow_task_2_gateway_3" bpmnElement="flow_task_2_gateway_3">
+        <di:waypoint x="430" y="149" />
+        <di:waypoint x="568" y="149" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_flow_gateway_3_task_4" bpmnElement="flow_gateway_3_task_4">
+        <di:waypoint x="615" y="146" />
+        <di:waypoint x="680" y="146" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_flow_task_4_task_5" bpmnElement="flow_task_4_task_5">
+        <di:waypoint x="780" y="146" />
+        <di:waypoint x="900" y="146" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_flow_gateway_3_task_6" bpmnElement="flow_gateway_3_task_6">
+        <di:waypoint x="615" y="146" />
+        <di:waypoint x="615" y="300" />
+        <di:waypoint x="680" y="300" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_flow_task_5_gateway_7" bpmnElement="flow_task_5_gateway_7">
+        <di:waypoint x="1000" y="146" />
+        <di:waypoint x="1180" y="146" />
+        <di:waypoint x="1180" y="270" />
+        <di:waypoint x="1257" y="270" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_flow_task_6_gateway_7" bpmnElement="flow_task_6_gateway_7">
+        <di:waypoint x="780" y="295" />
+        <di:waypoint x="1238" y="295" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_flow_gateway_7_endEvent_8" bpmnElement="flow_gateway_7_endEvent_8">
+        <di:waypoint x="1285" y="292" />
+        <di:waypoint x="1412" y="292" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>

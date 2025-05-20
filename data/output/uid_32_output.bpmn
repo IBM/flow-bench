@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" exporter="bpmn-js (https://demo.bpmn.io)" exporterVersion="18.3.1">
+  <process id="Process_1" isExecutable="false">
+    <startEvent id="startEvent_1" name="Start" />
+    <task id="task_2" name="GitLab_Project__5_0_0__create_Project" />
+    <sequenceFlow id="flow_startEvent_1_task_2" sourceRef="startEvent_1" targetRef="task_2" />
+    <task id="task_3" name="Microsoft_Exchange_Messages__2_0_0__SENDOUTLOOK_Messages" />
+    <sequenceFlow id="flow_task_2_task_3" sourceRef="task_2" targetRef="task_3" />
+    <userTask id="userTask_4" name="&#39;check with manager&#39;" />
+    <sequenceFlow id="flow_task_3_userTask_4" sourceRef="task_3" targetRef="userTask_4" />
+    <endEvent id="endEvent_5" name="End" />
+    <sequenceFlow id="flow_userTask_4_endEvent_5" sourceRef="userTask_4" targetRef="endEvent_5" />
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_1">
+      <bpmndi:BPMNShape id="BPMNShape_endEvent_5" bpmnElement="endEvent_5">
+        <dc:Bounds x="852" y="103" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="860" y="139" width="20" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_userTask_4" bpmnElement="userTask_4">
+        <dc:Bounds x="670" y="81" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_task_3" bpmnElement="task_3">
+        <dc:Bounds x="470" y="81" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_task_2" bpmnElement="task_2">
+        <dc:Bounds x="340" y="81" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_startEvent_1" bpmnElement="startEvent_1">
+        <dc:Bounds x="192" y="103" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="198" y="139" width="24" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="BPMNEdge_flow_startEvent_1_task_2" bpmnElement="flow_startEvent_1_task_2">
+        <di:waypoint x="221" y="107" />
+        <di:waypoint x="281" y="107" />
+        <di:waypoint x="281" y="160" />
+        <di:waypoint x="346" y="160" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_flow_task_2_task_3" bpmnElement="flow_task_2_task_3">
+        <di:waypoint x="440" y="121" />
+        <di:waypoint x="470" y="121" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_flow_task_3_userTask_4" bpmnElement="flow_task_3_userTask_4">
+        <di:waypoint x="570" y="121" />
+        <di:waypoint x="670" y="121" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_flow_userTask_4_endEvent_5" bpmnElement="flow_userTask_4_endEvent_5">
+        <di:waypoint x="770" y="114" />
+        <di:waypoint x="811" y="114" />
+        <di:waypoint x="811" y="123" />
+        <di:waypoint x="852" y="123" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>

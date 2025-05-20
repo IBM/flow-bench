@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" exporter="Camunda Modeler" exporterVersion="5.32.0">
+  <process id="Process_1" isExecutable="false">
+    <startEvent id="startEvent_1" name="Start" />
+    <task id="task_2" name="Jira_Project__2_0_0__retrievewithwhere_Project" />
+    <sequenceFlow id="flow_startEvent_1_task_2" sourceRef="startEvent_1" targetRef="task_2" />
+    <task id="task_3" name="Jira_Issue__2_0_0__retrievewithwhere_Issue" />
+    <sequenceFlow id="flow_task_2_task_3" sourceRef="task_2" targetRef="task_3" />
+    <endEvent id="endEvent_4" name="End" />
+    <sequenceFlow id="flow_task_3_endEvent_4" sourceRef="task_3" targetRef="endEvent_4" />
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_1">
+      <bpmndi:BPMNShape id="BPMNShape_startEvent_1" bpmnElement="startEvent_1">
+        <dc:Bounds x="186" y="100" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="192" y="136" width="24" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_task_2" bpmnElement="task_2">
+        <dc:Bounds x="350" y="85" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_task_3" bpmnElement="task_3">
+        <dc:Bounds x="550" y="85" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_endEvent_4" bpmnElement="endEvent_4">
+        <dc:Bounds x="722" y="104" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="730" y="140" width="20" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="BPMNEdge_flow_startEvent_1_task_2" bpmnElement="flow_startEvent_1_task_2">
+        <di:waypoint x="222" y="118" />
+        <di:waypoint x="350" y="118" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_flow_task_2_task_3" bpmnElement="flow_task_2_task_3">
+        <di:waypoint x="450" y="125" />
+        <di:waypoint x="550" y="125" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_flow_task_3_endEvent_4" bpmnElement="flow_task_3_endEvent_4">
+        <di:waypoint x="650" y="124" />
+        <di:waypoint x="722" y="124" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>

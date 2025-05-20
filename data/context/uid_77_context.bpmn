@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" exporter="bpmn-js (https://demo.bpmn.io)" exporterVersion="18.3.1">
+  <process id="Process_1" isExecutable="false">
+    <startEvent id="startEvent_1" name="Start" />
+    <task id="task_2" name="Amazon_S3_bucket__2_0_0__retrievewithwhere_bucket" />
+    <sequenceFlow id="flow_startEvent_1_task_2" sourceRef="startEvent_1" targetRef="task_2" />
+    <task id="task_3" name="Amazon_S3_object__2_0_0__create_object" />
+    <sequenceFlow id="flow_task_2_task_3" sourceRef="task_2" targetRef="task_3" />
+    <task id="task_4" name="Amazon_S3_object__2_0_0__COPY_OBJECT_object" />
+    <sequenceFlow id="flow_task_3_task_4" sourceRef="task_3" targetRef="task_4" />
+    <endEvent id="endEvent_5" name="End" />
+    <sequenceFlow id="flow_task_4_endEvent_5" sourceRef="task_4" targetRef="endEvent_5" />
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_1">
+      <bpmndi:BPMNShape id="BPMNShape_startEvent_1" bpmnElement="startEvent_1">
+        <dc:Bounds x="186" y="80" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="192" y="116" width="24" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_endEvent_5" bpmnElement="endEvent_5">
+        <dc:Bounds x="1062" y="93" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1070" y="129" width="20" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_task_4" bpmnElement="task_4">
+        <dc:Bounds x="830" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_task_3" bpmnElement="task_3">
+        <dc:Bounds x="530" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_task_2" bpmnElement="task_2">
+        <dc:Bounds x="380" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="BPMNEdge_flow_startEvent_1_task_2" bpmnElement="flow_startEvent_1_task_2">
+        <di:waypoint x="215" y="84" />
+        <di:waypoint x="301" y="84" />
+        <di:waypoint x="301" y="159" />
+        <di:waypoint x="386" y="159" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_flow_task_2_task_3" bpmnElement="flow_task_2_task_3">
+        <di:waypoint x="480" y="120" />
+        <di:waypoint x="530" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_flow_task_3_task_4" bpmnElement="flow_task_3_task_4">
+        <di:waypoint x="630" y="120" />
+        <di:waypoint x="830" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_flow_task_4_endEvent_5" bpmnElement="flow_task_4_endEvent_5">
+        <di:waypoint x="930" y="113" />
+        <di:waypoint x="1062" y="113" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>
