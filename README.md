@@ -60,7 +60,7 @@ The `ootb_catalog.json` file contains the unique identified `id` as well as the 
 ### Approach
 Details on the to generate flows and the evaluation results on  the tests suite can be found in Section 3 and Section 4 of the [paper](./flow_bench_arxiv.pdf) respectively.
 
-### Video of flow-gen (maybe).
+### Videos
 Video showcasing our approach for multiple use cases.
 
 ![for loop use case ](videos/forloop.mp4)
