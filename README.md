@@ -2,7 +2,7 @@
 
 # Flow-Bench
 
-**[Paper](./flow_bench_arxiv.pdf) | [Dataset](#Dataset) | [Approach](#approach) | [Videos](#videos) | [How to Cite]() | [Contributors](#contributors)**
+**[Paper](./flow_bench_arxiv.pdf) | [Dataset](#Dataset) | [Approach](#approach) | [Videos](#videos) | [How to Cite](#how-to-cite) | [Contributors](#contributors)**
 
 ### Dataset
 
