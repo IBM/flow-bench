@@ -8,7 +8,7 @@
 
 The dataset is in support of our approach to utilize LLMs to translate natural language into an intermediate representation with Python syntax that facilitates final conversion into widely adopted business process definition languages.
 
-The approach and the methodology that was used to create and validate the dataset can be found in the [paper](./flow_bench_arxiv.pdf) 
+The approach and the methodology that was used to create and validate the dataset can be found in the arxiv [paper](https://arxiv.org/pdf/2505.11646) 
 
 The dataset consists of 101 incremental build test cases targeted at supporting and evaluating approaches and research in natural language-driven business process automation.
 
@@ -59,7 +59,7 @@ The `ootb_catalog.json` file contains the unique identified `id` as well as the 
 
 ### Approach
 
-For details on the approach to generate flows and the evaluation results on the tests suite refer to Sections 3 and 4 of the [paper](./flow_bench_arxiv.pdf), respectively.
+For details on the approach to generate flows and the evaluation results on the tests suite refer to Sections 3 and 4 of the arxiv [paper](https://arxiv.org/pdf/2505.11646), respectively.
 
 ### Videos
 
