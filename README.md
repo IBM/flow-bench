@@ -77,11 +77,12 @@ https://github.com/user-attachments/assets/e2c6b1b1-3c08-481f-a4e1-0876870d555c
 ### How to Cite
 
 ```
-@misc{duesterwald2025flowbench,
-      title={FLOW-BENCH: Towards Conversational Generation of Enterprise Workflows}, 
-      author={Evelyn Duesterwald and Siyu Huo and Vatche Isahagian and K. R. Jayaram and Ritesh Kumar and Vinod Muthusamy and Punleuk Oum and Debashish Saha and Gegi Thomas and Praveen Venkateswaran},
-      year={2025},
-      url={https://arxiv.org/abs/2505.11646}, 
+@inproceedings{duesterwald2025flow,
+  title={FLOW-BENCH: Towards Conversational Generation of Enterprise Workflows},
+  author={Duesterwald, Evelyn and Huo, Siyu and Isahagian, Vatche and Jayaram, KR and Kumar, Ritesh and Muthusamy, Vinod and Oum, Punleuk and Saha, Debashish and Thomas, Gegi and Venkateswaran, Praveen},
+  booktitle={Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing: Industry Track},
+  pages={1426--1436},
+  year={2025}
 }
 ```
 
